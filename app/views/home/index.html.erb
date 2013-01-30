@@ -1,0 +1,45 @@
+<div id="primary_content" class="single">
+
+	<section id="latest_activity" class="panel">
+		
+		<h2>What's next</h2>
+	
+		<% if @gig.present? || @social.present? %>
+		<div class="event_panel">
+			<% if @gig.present? %>
+			<h3><%= link_to @gig.name, gig_path(@gig) %></h3>
+			<p><%= @gig.title %> on the <%= @gig.start_time.day.ordinalize %> to the <%= @gig.end_time.day.ordinalize %> of <%= @gig.start_time.strftime('%B') %> in <%= @gig.chapter.title %></p>
+			<% end %>
+			<% if @social.present? %>
+			<h3><%= link_to @social.name, social_path(@social) %></h3>
+			<p>Join us on <%= @social.start_time.day.ordinalize %> of <%= @social.start_time.strftime('%B') %> at <%= @social.start_time.strftime('%l%P') %> <%= (@social.location?) ? "at #{@social.location}" : ", venue TBC" %></p>
+			<% end %>
+		</div>
+		<% end %>
+		
+		<p class="cta"><%= link_to "GFN Calendar", calendar_path %></p>
+		
+	</section>
+	
+	<section id="community" class="panel">
+		<h2>The Community</h2>
+		<ul id="community_infographic">
+			<li class="badge_count"><span><%= @venture_count %></span> <%= link_to "amazing ventures", ventures_path %></li>
+			<li class="ticker_count"><%= spannerize("%04d" % @member_count) %> <%= link_to "League of Intrapreneursers", members_path %></li>
+		</ul>
+		<% unless user_signed_in? %>
+		<p class="highlight_button"><%= link_to "Join the movement", register_path %></p>
+		<% end %>
+	</section>
+	
+	<section id="updates" class="panel">
+		<% if @challenge.present? %>
+			<h2>Featured challenge</h2>
+			<%= render :partial => "challenges/block", :locals => { :challenge => @challenge } %>	
+		<% elsif @update.present? %>
+			<h2>Warblings</h2>
+			<%= render :partial => "posts/block", :locals => { :post => @update } %>
+		<% end %>
+	</section>
+	
+</div>

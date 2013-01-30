@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		
+		<title>
+			League of Intrapreneurs &ndash; Collaborating for Good
+		</title>
+		
+		<meta name="description" content="League of Intrapreneurs" />
+		<meta name="keywords" content="" />
+		<link rel="shortcut icon" href="/favicon.ico?v23" />
+		
+		<meta property="og:title" content="<%= "#{@member.name.titlecase} at " if params[:controller] == "members" && params[:action] == "show" && !@member.nil? %>League of Intrapreneurs" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://www.leagueofIntrapreneurs.com" />
+		<meta property="og:image" content="http://www.leagueofIntrapreneurs.com/assets/branding/og.gif" />
+		<meta property="og:description" content="League of Intrapreneurs" />
+		<meta property="fb:admins" content="1009211182" />
+		
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+				
+		<% if Rails.env.production? %>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'xxxxxxxxx']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+		<% end %>
+		
+		<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		
+	</head>
+	<body class="<%= "section_#{params[:controller].parameterize.underscore} view_#{params[:action]}"%>">
+
+		<header>
+			
+		</header>
+
+		<div id="main" role="main" class="container">
+			<%= yield %>
+		</div>
+	
+		<footer>
+			
+		</footer>
+	
+		<section id="colophon">
+			
+		</section>
+
+	</body>
+</html>

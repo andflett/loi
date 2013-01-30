@@ -1,0 +1,11 @@
+development:
+  api_key: ''
+  list_id: ''
+
+test:
+  api_key: ''
+  list_id: ''
+
+production:
+  api_key: ''
+  list_id: ''
