@@ -5,16 +5,9 @@ ActiveAdmin.register Post do
     authorize_resource
   end
   
-  menu :priority => 2, :parent => "Warblings", :if => proc{ can?(:manage, Post) }, :label => "Posts (Long form)"
+  menu :priority => 1, :if => proc{ can?(:manage, Post) }
     
-  scope :all, :default => true
-  scope :updates, :if => proc { current_user.role == "admin" || current_user.role == "leader" }
-  
   filter :title
-  
-  sidebar :help do
-    render "/hive/shared/help"
-  end
   
 	index do
     column("Title") { |post| link_to post.title, hive_post_path(post) }

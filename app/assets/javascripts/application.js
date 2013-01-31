@@ -12,12 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.selectBox.min
-//= require jquery.tools.min
-//= require jquery.validate.min
-//= require jquery.remotipart
 //= require paginate
 //= require spin.min
-//= require stick_to_top.min
 //= require_tree .
 //= require modernizr

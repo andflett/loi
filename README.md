@@ -1,6 +1,3 @@
-LOI
-===
-
 ### Mailchimp/Devise integration
 
 User accounts are tied to a Mailchimp subscriber lists. Users can edit their preferences on their profile page. 

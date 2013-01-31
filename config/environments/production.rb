@@ -20,14 +20,14 @@ Leagueofintrapreneurs::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { :host => 'www.leagueofIntrapreneurs.com' }
+  config.action_mailer.default_url_options = { :host => 'www.leagueofintrapreneurs.com' }
   config.action_mailer.delivery_method = :sendmail  
   config.action_mailer.sendmail_settings = {:arguments => "-i"}
   
   config.middleware.use ExceptionNotifier,
     :email_prefix => "League of Intrapreneurs Application Error",
-    :sender_address => %{"GFN Hive Mind" <hello@leagueofIntrapreneurs.com>},
-    :exception_recipients => %w{andrew@leagueofIntrapreneurs.com}
+    :sender_address => %{"LOI" <hello@leagueofintrapreneurs.com>},
+    :exception_recipients => %w{andrewsprinz@gmail.com}
   
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH

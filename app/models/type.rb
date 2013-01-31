@@ -1,8 +1,8 @@
-class Category < ActiveRecord::Base
+class Type < ActiveRecord::Base
 
   attr_accessible :title, :slug
 
-	has_many :posts
+	has_and_belongs_to_many :posts
 	
 	validates_presence_of :title
 	

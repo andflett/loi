@@ -2,8 +2,6 @@
  
   .primary_panel { 
     padding: 40px 60px;
-		background: #9adada;
-		color: #ffffff;
 		width: 500px;
 		margin: 0 auto 40px;
 		text-align: center;
@@ -25,31 +23,6 @@
 		text-align: left;
 		color: #085156;
 		font-size: 14px;
-	}
-	
-	.primary_panel p.form_arrow_down {
-		padding: 0 0px 9px;
-	}
-	
-	.primary_panel p.form_arrow_down a {
-		display: inline-block;
-		padding: 0 2px;
-	}
-	
-	.primary_panel p.form_arrow_down span {
-		display: inline-block;
-		position: relative;
-	}
-	
-	.primary_panel p.form_arrow_down span:after {
-		content: '';
-		width: 20px;
-		height: 15px;
-		display: block;
-		top: 10px;
-		right: -28px;
-		position: absolute;
-		background: url(<%= asset_path "assets/form_arrow.png" %>) no-repeat top left;
 	}
 	
 	.primary_panel .hint {
@@ -101,86 +74,49 @@
 		color: #ffffff;
 	}
 	
-	.primary_panel .footnote {
-		color: #ffffff;
-		text-align: center;
-		padding-top: 10px;
-		font-size: 13px;
-		width: 85%;
-		margin: 0 auto;
-		line-height: 18px;
-	}
-	
-	.primary_panel .footnote a {
-		color: #085156;
-	}
-  
 /* =label */
  
-  .primary_panel .string label,
- 	.primary_panel .email label,
-	.primary_panel .url label,
-	.primary_panel .password label { 
+  .string label,
+ 	.email label,
+	.url label,
+	.password label { 
     display: block; 
     position: relative;
 		text-align: left;
-		color: #9adada;
-    font-size: 16px;
-		line-height: 20px;
+		text-transform: uppercase;
+		color: #999;
+    font-size: 11px;
+		line-height: 12px;
     border: 0;
   }
 
-	.primary_panel .string label.js,
- 	.primary_panel .email label.js,
-	.primary_panel .url label.js,
-	.primary_panel .password label.js {
+	.string label.js,
+ 	.email label.js,
+	.url label.js,
+	.password label.js {
 		position: absolute;
-		top: 13px;
-		left: 18px;
+		top: 8px;
+		left: 8px;
 	}
   
 /* =input */
 
-	.primary_panel .input {
-		position: relative;
-	}
+	.input { position: relative; }
 
-  .primary_panel .string input, 
-	.primary_panel .email input,
-	.primary_panel .url input,
-	.primary_panel .password input,
-	.primary_panel .integer input {  
-    padding: 13px 18px 11px;
-		margin-top: 0;
-		color: #74a4a4;
+  .string input, 
+	.email input,
+	.url input,
+	.password input,
+	.integer input {  
+    padding: 3px 8px 2px;
+		color: #e60f51;
 		background-color: #ffffff;
-		background-position: top left, top right;
-		background-repeat: no-repeat, no-repeat;
-		background-image: url(<%= asset_path "blocks/input_left_2.gif" %>),
-											url(<%= asset_path "blocks/input_right_2.gif" %>);
-    margin-bottom: 20px; 
-    font-size: 16px;
+    margin: 0; 
+    font-size: 11px;
 		line-height: 20px;
     border: 0;
-		width: 464px;
 		-webkit-font-smoothing: antialiased;
   }
-
-  .primary_panel .string:nth-child(odd) input,
-	.primary_panel .email:nth-child(odd) input,
-	.primary_panel .url:nth-child(odd) input,
-	.primary_panel .password:nth-child(odd) input {
-		background-image: url(<%= asset_path "blocks/input_left_3.gif" %>),
-											url(<%= asset_path "blocks/input_right.gif" %>);
-	}
-	
-	.primary_panel .string:nth-child(3n) input,
-	.primary_panel .email:nth-child(3n) input,
-	.primary_panel .url:nth-child(3n) input,
-	.primary_panel .password:nth-child(3n) input {
-		background-image: url(<%= asset_path "blocks/input_left.gif" %>),
-											url(<%= asset_path "blocks/input_right.gif" %>);
-	}
  
  /* =boolean */
  
@@ -228,12 +164,6 @@
 		background-color: #ffffff;
 		-webkit-font-smoothing: antialiased;
 		resize: none; 
-		background-position: top left, top right, bottom left, bottom right;
-		background-repeat: no-repeat;
-		background-image: url(<%= asset_path "blocks/textarea_top_left.gif" %>),
-											url(<%= asset_path "blocks/textarea_top_right.gif" %>),
-											url(<%= asset_path "blocks/textarea_bottom_left.gif" %>),
-											url(<%= asset_path "blocks/textarea_bottom_right.gif" %>);
   }
 
   .primary_panel .text label { 
@@ -243,7 +173,6 @@
 		line-height: 24px;
 		font-weight: normal;
 		width: 80%;
-		font-family: "League of Intrapreneurs";
 		text-align: left;
   }
 
@@ -255,27 +184,16 @@
 
 	/* =submit */
 	
-	.primary_panel input[type="submit"] {
-		color: #ffffff;
+	input[type="submit"] {
+		color: #e60f51;
+		text-transform: uppercase;
 		display: inline-block;
-		line-height: 28px;
-		font-family: "League of Intrapreneurs";
-		font-size: 22px;
-		padding: 25px 15px 34px 15px;
-		width: 240px;
+		font-size: 12px;
+		padding: 5px 8px;
 		text-align: center;
-		background-color: transparent;
-		background-image: url(assets/cta_aside.png);
-		background-position: left top;
-		background-repeat: no-repeat;
+		background: #ffffff;
 		border: 0;
 		cursor: pointer;
-	}
-	
-	.primary_panel input[type="submit"]:active {
-		text-decoration: none;
-		background-position: left bottom;
-		padding: 41px 20px 18px 0px;
 	}
 	
 /* Errors */

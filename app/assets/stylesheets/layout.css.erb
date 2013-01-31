@@ -1,12 +1,216 @@
 /*
-	White: #ffffff
+	Blue: DFEFE9
+	Red: e60f51
 */
-
 
 @media all {
 
 	body { 
 		background-color: #ffffff;
 	}
+	
+	.container {
+		width: 986px;
+		margin: 0 auto 20px;
+		padding: 40px;
+		background: #DFEFE9;
+	}
+	
+	/* =header */
+	
+		header.container { 
+			position: relative;
+			padding: 0 40px;
+			overflow: hidden;
+		}
+	
+		header #social {
+			background: #e60f51;
+			color: #ffffff;
+			padding: 10px 30px 11px;
+			margin-bottom: 41px;
+		}
+		
+		header #social p {
+			text-transform: uppercase;
+			font-size: 14px;
+			display: inline-block;
+			margin: 0 20px 0 0;
+			position: relative;
+			top: 1px;
+		}
+		
+		header #social ul.icon_list {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+		}
+		
+		header #social ul.icon_list li {
+			display: inline-block;
+			margin: 0;
+			padding: 0 5px 0 0;
+		}
+		
+		header #social ul.icon_list li a {
+			color: #ffffff;
+			width: 24px;
+			height: 24px;
+			text-indent: -1337px;
+			display: block;
+			background-repeat: no-repeat;
+			background-position: top left;
+		}
+		
+		header #social ul.icon_list li a:hover,
+		header #social ul.icon_list li a:active,
+		header #social ul.icon_list li a:focus {
+			text-decoration: none;
+		}
+		
+		header #social ul.icon_list li.twitter a { background-image: url(<%= asset_path "icons/twits.png" %>); }
+		header #social ul.icon_list li.facebook a { background-image: url(<%= asset_path "icons/facebook.png" %>); }
+		header #social ul.icon_list li.linkedin a { background-image: url(<%= asset_path "icons/linkedin.png" %>); }
+		
+		header #social form {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			float: right;
+			position: relative;
+			top: -2px;
+		}
+		
+		header #social div {
+			display: inline-block;
+		}
+		
+		header p#branding {
+			width: 220px;
+			height: 167px;
+			padding: 53px 0 0 0;
+			float: left;
+			margin: 0 35px 40px 0;
+			background: url(<%= asset_path "blocks/large_red.png" %>) no-repeat top left;
+			color: #ffffff;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		
+		header p#branding .init {
+			font-size: 12px;
+			display: inline-block;
+			padding: 0 11px 3px;
+			position: relative;
+		}
+		
+		header p#branding .init:before {
+			content: '+';
+			position: absolute;
+			left: 0;
+			top : -2px;
+		}
+		
+		header p#branding .init:after {
+			content: '+';
+			position: absolute;
+			right: 0;
+			top : -2px;
+		}
+		
+		header p#branding .title {
+			display: inline-block;
+			border-top: 1px solid #ffffff;
+			border-bottom: 1px solid #ffffff;
+			padding: 10px 0;
+			font-size: 18px;
+			line-height: 24px;
+			width: 160px;
+			margin: 0 20px 0;
+		}
+		
+		header p#tagline {
+			width: 650px;
+			float: left;
+			color: #e60f51;
+			text-transform: uppercase;
+			font-size: 19px;
+			line-height: 28px;
+			padding-top: 40px;
+		}
+		
+		header p#tagline span {
+			font-weight: 100;
+		}
+		
+		header #primary_navigation {
+			width: 100%;
+			overflow: hidden;
+			border-top: 1px dotted #e60f51;
+			padding: 20px 0px;
+		}
+		
+		header #primary_navigation ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
  
+		header #primary_navigation ul li {
+			display: inline-block;
+			text-transform: uppercase;
+			font-size: 16px;
+			padding: 0 7px;
+			font-weight: 100;
+		}
+		
+		header #primary_navigation ul li a {
+			color: #1D1D1B;
+			display: block;
+			padding: 0 15px 0;
+			position: relative;
+		}
+				
+		header #primary_navigation ul li a:active,
+		header #primary_navigation ul li a:focus,
+		header #primary_navigation ul li a:hover,
+		header #primary_navigation ul li a.active {
+			color: #e60f51;
+			text-decoration: none;
+		}
+		
+		header #primary_navigation ul li a:active:before,
+		header #primary_navigation ul li a:focus:before,
+		header #primary_navigation ul li a:hover:before,
+		header #primary_navigation ul li a.active:before {
+			content: '+';
+			position: absolute;
+			left: 0;
+			top : -2px;
+		}
+		
+		header #primary_navigation ul li a:active:after,
+		header #primary_navigation ul li a:focus:after,
+		header #primary_navigation ul li a:hover:after,
+		header #primary_navigation ul li a.active:after {
+			content: '+';
+			position: absolute;
+			right: 0;
+			top : -2px;
+		}
+		
+	/* =footer */
+	
+		footer.container {
+			background: transparent;
+			padding: 5px 0 0;
+			width: 1066px;
+		}
+		
+		footer.container p {
+			font-size: 11px;
+		}
+
 }
