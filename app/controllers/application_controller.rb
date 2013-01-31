@@ -5,30 +5,12 @@ class ApplicationController < ActionController::Base
 
   before_filter :store_location
   helper_method :signed_in_as_owner?
-
-  unless Rails.application.config.consider_all_requests_local
-    #rescue_from Exception,
-                #:with => :application_error
-    rescue_from ActiveRecord::RecordNotFound,
-                :with => :not_found
-    rescue_from ActionController::RoutingError,
-                :with => :not_found
-    rescue_from ActionController::UnknownController,
-                :with => :not_found
-    rescue_from ActionController::UnknownAction,
-                :with => :not_found
-  end
   
   def not_found
     return respond_to do |format|
       format.html { render 'errors/404', :status => 404, :layout => 'application' }
       format.any { render 'errors/404', :status => 404, :formats => [:html], :layout => 'application', :content_type => Mime[:html] }
     end
-  end
-  
-  def application_error(exception)
-    #ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
-    #render :template => "/errors/500.html.erb", :layout => 'errors.html.erb'
   end
   
   rescue_from CanCan::AccessDenied do |exception|

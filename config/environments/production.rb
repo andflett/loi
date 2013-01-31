@@ -24,11 +24,6 @@ Leagueofintrapreneurs::Application.configure do
   config.action_mailer.delivery_method = :sendmail  
   config.action_mailer.sendmail_settings = {:arguments => "-i"}
   
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "League of Intrapreneurs Application Error",
-    :sender_address => %{"LOI" <hello@leagueofintrapreneurs.com>},
-    :exception_recipients => %w{andrewsprinz@gmail.com}
-  
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
