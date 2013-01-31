@@ -6,13 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
   helper_method :signed_in_as_owner?
   
-  def not_found
-    return respond_to do |format|
-      format.html { render 'errors/404', :status => 404, :layout => 'application' }
-      format.any { render 'errors/404', :status => 404, :formats => [:html], :layout => 'application', :content_type => Mime[:html] }
-    end
-  end
-  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to hive_dashboard_path, :alert => exception.message
   end
