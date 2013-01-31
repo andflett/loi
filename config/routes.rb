@@ -11,12 +11,14 @@ Leagueofintrapreneurs::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
-  resources :posts, :only => [:show, :index]
-	resources :categories, :only => [:show]
+  resources :posts, :only => [:show]
 	resources :tags, :only => [:show]
+	resources :types, :only => [:show]
+
+	resources :events, :only => [:show, :index]
+	resources :resources, :only => [:index]
 	
-	match "press" => "colophon#press"
-	match "partners" => "colophon#partners"
+	match "join" => "colophon#join"
   match "about" => "colophon#about"
   match "privacy" => "colophon#privacy"
 

@@ -11,13 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131083952) do
+ActiveRecord::Schema.define(:version => 20130131233236) do
 
-  create_table "categories", :force => true do |t|
+  create_table "events", :force => true do |t|
     t.string   "title"
+    t.text     "body"
+    t.text     "excerpt"
+    t.text     "hero_image"
+    t.boolean  "published",  :default => false, :null => false
     t.string   "slug"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "friendly_id_slugs", :force => true do |t|
@@ -36,13 +41,24 @@ ActiveRecord::Schema.define(:version => 20130131083952) do
     t.text     "body"
     t.text     "excerpt"
     t.text     "hero_image"
-    t.boolean  "published",   :default => false, :null => false
+    t.boolean  "published",  :default => false, :null => false
     t.string   "slug"
     t.integer  "type_id"
-    t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.text     "excerpt"
+    t.text     "hero_image"
+    t.boolean  "published",  :default => false, :null => false
+    t.string   "slug"
+    t.integer  "user_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "sir_trevor_images", :force => true do |t|

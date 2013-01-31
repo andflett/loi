@@ -31,7 +31,7 @@
 			margin-bottom: 41px;
 		}
 		
-		header #social p {
+		header #social p.heading {
 			text-transform: uppercase;
 			font-size: 14px;
 			display: inline-block;
@@ -73,13 +73,30 @@
 		header #social ul.icon_list li.facebook a { background-image: url(<%= asset_path "icons/facebook.png" %>); }
 		header #social ul.icon_list li.linkedin a { background-image: url(<%= asset_path "icons/linkedin.png" %>); }
 		
-		header #social form {
+		header #social p.cta {
 			display: inline-block;
 			margin: 0;
 			padding: 0;
 			float: right;
 			position: relative;
-			top: -2px;
+		}
+		
+		header #social p.cta a {
+			color: #ffffff;
+			display: inline-block;
+			background: #ffffff;
+			color: #e60f51;
+			text-transform: uppercase;
+			border-radius: 5px;
+			font-size: 14px;
+			padding: 2px 15px;
+		}
+		
+		header #social p.cta a:hover,
+		header #social p.cta a:active,
+		header #social p.cta a:focus {
+			text-decoration: none;
+			color: #1D1D1B;
 		}
 		
 		header #social div {
@@ -87,15 +104,25 @@
 		}
 		
 		header p#branding {
+			float: left;
+			margin: 0 35px 40px 0;
+		}
+		
+		header p#branding a {
 			width: 220px;
 			height: 167px;
 			padding: 53px 0 0 0;
-			float: left;
-			margin: 0 35px 40px 0;
+			display: block;
 			background: url(<%= asset_path "blocks/large_red.png" %>) no-repeat top left;
 			color: #ffffff;
 			text-align: center;
 			text-transform: uppercase;
+		}
+		
+		header p#branding a:hover,
+		header p#branding a:focus,
+		header p#branding a:active {
+			text-decoration: none;
 		}
 		
 		header p#branding .init {

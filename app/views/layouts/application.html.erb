@@ -43,38 +43,27 @@
 		<header class="container">
 			
 			<div id="social">
-				<p>Connect with the League</p>
+				
+				<p class="heading">Connect with the League</p>
+				
 				<ul class="icon_list">
 					<li class="twitter"><%= link_to "Twitter", "https://twitter.com/SocIntLeague" %></li>
 					<li class="facebook"><%= link_to "Facebook" %></li>
 					<li class="linkedin"><%= link_to "LinkedIn" %></li>
 				</ul>
 				
-				<form action="http://leagueofintraprenuers.us6.list-manage.com/subscribe/post?u=0aa8655fab29ac4bd11775b73&amp;id=f4d6435111" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<div class="input smart_label email">
-						<label for="mce-EMAIL">Email</label>
-						<input type="email" value="" name="email" class="required email" />
-					</div>
-					<div class="input smart_label string">
-						<label for="mce-NAME">Name</label>
-						<input type="text" value="" name="name" class="string" />
-					</div>
-					<div id="mce-responses">
-						<div class="response" id="mce-error-response" style="display:none"></div>
-						<div class="response" id="mce-success-response" style="display:none"></div>
-					</div>
-					<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" /></div>
-				</form>
+				<p class="cta"><%= link_to "Join us!", join_path %></li>
 
 			</div>
 			
-			<p id="branding"><span class="init">The</span> <span class="title">League of <br />Intrapreneurs</span></p>
-			<p id="tagline">The League of Intraprenuers is a collaborative effort between a number of organisations, including Interameric and Development Bank, Accenture and Imaginals. <span>Our aim is to help amplify an emerging movement of corporate change agents &mdash; or social intraprenuers.</span></p>
+			<p id="branding"><%= link_to "<span class=\"init\">The</span> <span class=\"title\">League of <br />Intrapreneurs</span>".html_safe, root_path %></p>
+			<p id="tagline">The League of Intrapreneurs is a global movement of corporate changemakers working to transforming business from the inside out.</p>
 			<nav id="primary_navigation">
 				<ul>
-					<li><%= link_to "The Stream", root_path, :class => ("active" if params[:controller] == "home") %></li>
+					<li><%= link_to "Inspiration", root_path, :class => ("active" if params[:controller] == "home") %></li>
 					<li><%= link_to "About the League", about_path, :class => ("active" if params[:action] == "about") %></li>
-					<li><%= link_to "Resources", category_path('resources'), :class => ("active" if params[:controller] == "categories") %></li>
+					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
+					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>
 				</ul>
 			</nav>
 			
@@ -85,7 +74,7 @@
 		</div>
 	
 		<footer class="container">
-			Twitter, <%= link_to "Partners", partners_path %>, <%= link_to "Press", press_path %>
+			Twitter
 			<p id="colophon">Copyright &copy; Imaginals 2013, view our <%= link_to "privacy policy", privacy_path %></p>
 		</footer>
 

@@ -2,11 +2,8 @@ class ColophonController < ApplicationController
 
 	def about
 	end
-
-	def press
-	end
 	
-	def partners
+	def join
 	end
 
 end
