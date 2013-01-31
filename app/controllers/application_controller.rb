@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   helper_method :signed_in_as_owner?
 
   unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception,
-                :with => :application_error
+    #rescue_from Exception,
+                #:with => :application_error
     rescue_from ActiveRecord::RecordNotFound,
                 :with => :not_found
     rescue_from ActionController::RoutingError,
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   
   def application_error(exception)
     #ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
-    render :template => "/errors/500.html.erb", :layout => 'errors.html.erb'
+    #render :template => "/errors/500.html.erb", :layout => 'errors.html.erb'
   end
   
   rescue_from CanCan::AccessDenied do |exception|
