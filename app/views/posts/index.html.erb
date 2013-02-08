@@ -1,0 +1,32 @@
+<section id="primary_content" class="container">
+	
+	<div id="schemantics">
+		<ul class="content_grid">
+
+		</ul>
+	</div>
+	
+	<aside>
+		<% if @types.any? %>
+		<nav id="type_navigation">
+			<ul class="filters">
+				<% @types.each do |type| %>
+					<li><%= link_to type.title %></li>
+				<% end %>
+			</ul>
+		</nav>
+		<% end %>
+
+		<% if @tags.any? %>
+		<nav id="type_navigation">
+			<ul class="filters">
+				<% @tags.each do |tag| %>
+					<li><%= link_to tag.name %></li>
+				<% end %>
+			</ul>
+		</nav>
+		<% end %>
+	</aside>
+
+</section>
+

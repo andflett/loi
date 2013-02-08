@@ -1,19 +1,23 @@
 class Resource < ActiveRecord::Base
 
-	scope :published, where(:published => true)
-
-  attr_accessible :excerpt, :title, :body, :user_id, :slug,
-									:hero_image, :published, :created_at
+	scope :features, where(:featured => true)
+	
+  attr_accessible :title, :body, :user_id, :url, :created_at, :featured
   
 	belongs_to :user
 
-	validates_presence_of :title, :excerpt, :body
+  before_save :assert_featured
+	validates_presence_of :title, :body, :url
+
+	private
 	
-	mount_uploader :hero_image, ::ArticleImageUploader
-	
-	paginates_per 10
-	
-	extend FriendlyId
-  friendly_id :title, use: :history
+		def assert_featured
+	    if self.featured?
+	      Resource.where('id != ?',self.id).each do |resource|
+	        resource.featured = false
+	        resource.save!
+	      end
+	    end
+	  end
 
 end

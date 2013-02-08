@@ -11,18 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131233236) do
+ActiveRecord::Schema.define(:version => 20130208185505) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.text     "excerpt"
-    t.text     "hero_image"
-    t.boolean  "published",  :default => false, :null => false
-    t.string   "slug"
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.datetime "date"
+    t.string   "url"
+    t.boolean  "featured",   :default => false
   end
 
   create_table "friendly_id_slugs", :force => true do |t|
@@ -52,13 +51,11 @@ ActiveRecord::Schema.define(:version => 20130131233236) do
   create_table "resources", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.text     "excerpt"
-    t.text     "hero_image"
-    t.boolean  "published",  :default => false, :null => false
-    t.string   "slug"
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "url"
+    t.boolean  "featured",   :default => false
   end
 
   create_table "sir_trevor_images", :force => true do |t|
@@ -67,11 +64,21 @@ ActiveRecord::Schema.define(:version => 20130131233236) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
   create_table "tags", :force => true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name"
   end
 
   create_table "types", :force => true do |t|

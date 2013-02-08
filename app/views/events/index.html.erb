@@ -1,3 +1,32 @@
 <section id="primary_content" class="container">
-	<h1>Events</h1>
+	<h1>Intrapreneurial events</h1>
+	
+	<div id="schemantics">
+		<% if @events.any? %>
+			<% @events.each do |event| %>
+		
+				<article class="event">
+					<h2><%= event.title %></h2>	
+				
+				</article>
+			
+			<% end %>
+		<% else %>
+			<p>We're not aware of any events coming up, <%= link_to "let us know" %> if you have one to share.</p>
+		<% end %>
+	</div>
+	
+	<% if @posts.any? %>
+	<aside>
+		<h2>Event write-ups</h2>
+		
+		<ul class="post_blocks">
+		<% @posts.each do |post| %>
+			<%= render :partial => "posts/block", :locals => {:post=>post} %>
+		<% end %>
+		</ul>
+		
+	</aside>
+	<% end %>
+	
 </section>

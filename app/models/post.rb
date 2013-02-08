@@ -3,11 +3,12 @@ class Post < ActiveRecord::Base
 	scope :published, where(:published => true)
 
   attr_accessible :excerpt, :title, :body, :user_id, :slug,
-									:hero_image, :type_id, :published, :created_at
+									:hero_image, :type_id, :published, :created_at, :tag_list
   
 	belongs_to :user
 	belongs_to :type
-	has_and_belongs_to_many :tags
+
+	acts_as_taggable_on :tags
 
 	validates_presence_of :title, :excerpt, :body
 	

@@ -5,7 +5,6 @@
 		<h1><%= (params[:authfailure]) ? "The bit where you log in" : "Welcome back" %></h1>
 
 		<% if params[:authfailure] %>
-			<p class="form_arrow_down">Hi there, sorry to put a form in your way, but we need you to log in to continue, new members should <%= link_to "join the movement", register_path %> first, veteran League of Intrapreneursers can just pop their details in those boxes down <span>there</span></p>
 		<% else %>
 			<%= render "shared/notices" %>
 		<% end %>

@@ -1,10 +1,9 @@
-ActiveAdmin.register Type do
-  
-  controller do
-    load_resource :except => :index
-    authorize_resource
-  end
-  
-  menu :if => proc{ can?(:manage, Category) }
-    
+Type.all.each do |type|
+	
+	ActiveAdmin.register Post, :as => type.title do
+
+	  menu :parent => "Inspiration"
+
+	end
+	
 end

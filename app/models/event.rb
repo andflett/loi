@@ -1,19 +1,24 @@
 class Event < ActiveRecord::Base
 
-	scope :published, where(:published => true)
+	scope :future, where("date > ?", Time.now)
+	scope :features, where(:featured => true)
 
-  attr_accessible :excerpt, :title, :body, :user_id, :slug,
-									:hero_image, :published, :created_at
+  attr_accessible :title, :body, :user_id, :date, :url, :created_at, :featured
   
 	belongs_to :user
 
-	validates_presence_of :title, :excerpt, :body
+	before_save :assert_featured
+	validates_presence_of :title, :body, :date
 	
-	mount_uploader :hero_image, ::ArticleImageUploader
+	private
 	
-	paginates_per 10
+		def assert_featured
+	    if self.featured?
+	      Event.where('id != ?',self.id).each do |event|
+	        event.featured = false
+	        event.save!
+	      end
+	    end
+	  end
 	
-	extend FriendlyId
-  friendly_id :title, use: :history
-
 end

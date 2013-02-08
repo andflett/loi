@@ -11,17 +11,22 @@ Leagueofintrapreneurs::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
-  resources :posts, :only => [:show]
-	resources :tags, :only => [:show]
-	resources :types, :only => [:show]
+  resources :posts, :only => [:show] do
+		get :autocomplete_tag_name, :on => :collection  
+		collection do 
+			resources :types, :only => [:show]
+		end
+	end
 
-	resources :events, :only => [:show, :index]
+	resources :events, :only => [:index]
 	resources :resources, :only => [:index]
 	
 	match "join" => "colophon#join"
   match "about" => "colophon#about"
+  match "partners" => "colophon#partners"
   match "privacy" => "colophon#privacy"
-
+	match "inspiration" => "posts#index"
+	
 	root :to => "home#index"
 
 end

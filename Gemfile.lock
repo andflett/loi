@@ -40,6 +40,8 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.3.3)
+      rails (~> 3.0)
     ansi (1.4.3)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
@@ -145,6 +147,8 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
+    rails3-jquery-autocomplete (1.0.10)
+      rails (~> 3.0)
     rails_autolink (1.0.9)
       rails (~> 3.1)
     railties (3.2.11)
@@ -207,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 0.5.0)
+  acts-as-taggable-on
   cancan
   carrierwave
   coffee-rails
@@ -224,6 +229,7 @@ DEPENDENCIES
   mysql2
   pg
   rails (= 3.2.11)
+  rails3-jquery-autocomplete
   rails_autolink
   remotipart
   sass-rails

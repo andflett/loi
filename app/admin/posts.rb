@@ -5,20 +5,24 @@ ActiveAdmin.register Post do
     authorize_resource
   end
   
-  menu :priority => 1, :if => proc{ can?(:manage, Post) }
+  menu :parent => "Inspiration", :priority => 1, :if => proc{ can?(:manage, Post) }
     
   filter :title
   
 	index do
-    column("Title") { |post| link_to post.title, hive_post_path(post) }
+    column("Title") { |post| link_to post.title, admin_post_path(post) }
     column("Author") { |post| post.user.name unless post.user.nil? }
     column("State") { |post| status_tag((post.published) ? "Published" : "Unpublished") }
     column "" do |post|
-      "#{link_to "Edit", edit_hive_post_path(post)} &nbsp; #{link_to "Delete", hive_post_path(post), :method => "delete", :confirm => "Are you sure you wish to delete this post?"}".html_safe
+      "#{link_to "Edit", edit_admin_post_path(post)} &nbsp; #{link_to "Delete", admin_post_path(post), :method => "delete", :confirm => "Are you sure you wish to delete this post?"}".html_safe
     end
   end
   
   form :html => { :enctype => "multipart/form-data" }  do |f|
+		
+		f.inputs "Tags" do
+			f.autocomplete_field :tag_list, autocomplete_tag_name_posts_path, :"data-delimiter" => ', '
+		end
 		
 		unless f.object.new_record?
 			f.inputs "Dates" do
@@ -26,22 +30,12 @@ ActiveAdmin.register Post do
 			end
 		end
 		
-    f.inputs "Details" do
-      if current_user.role == "admin" || current_user.role == "leader"
-        f.input :gfn_update, :label => "Post in League of Intrapreneurs updates?"
-      end
-			if current_user.role == "admin"
-        f.input :chapter
-      else
-        f.input :chapter, :value => current_user.chapter_id, :input_html => { :disabled => "disabled" }
-      end
-      f.input :issue, :label => "Add to Warble stream?", :collection => Issue.active
-    end
     f.inputs "Post" do   
       f.input :hero_image, :label => "Thumbnail"
       f.input :title
       f.input :excerpt, :input_html => { :rows => 5 }
     end
+
     f.inputs "Body" do
       if post.new_record? || post.body.is_json?
         f.sir_trevor_text_area :body
@@ -63,16 +57,11 @@ ActiveAdmin.register Post do
   show  do |post|
     panel 'Details' do
       attributes_table_for post do
-        row :chapter
         row "Author" do 
           post.user.name if post.user
         end
         row "Posted" do
           post.created_at
-        end
-        row :issue
-        row "GFN Update?" do
-          (post.gfn_update) ? "Yes" : "No"
         end
       end  
     end

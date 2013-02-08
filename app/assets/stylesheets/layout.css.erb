@@ -1,6 +1,6 @@
 /*
 	Blue: DFEFE9
-	Red: e60f51
+	Red: E40F4F
 */
 
 @media all {
@@ -10,10 +10,31 @@
 	}
 	
 	.container {
-		width: 986px;
+		width: 1006px;
 		margin: 0 auto 20px;
-		padding: 40px;
+		padding: 30px;
 		background: #DFEFE9;
+	}
+	
+	.container.panels {
+		width: 1066px;
+		margin: 0 auto 20px;
+		padding: 0;
+		background: transparent;
+		overflow: hidden;
+	}
+	
+	.panels .panel {
+		width: 282px;
+		margin: 0 20px 0 0;
+		float: left;
+		padding: 25px 30px;
+		background: #DFEFE9;
+		
+	}
+	
+	.panels .panel:last-child {
+		margin: 0;
 	}
 	
 	/* =header */
@@ -22,12 +43,13 @@
 			position: relative;
 			padding: 0 40px;
 			overflow: hidden;
+			width: 986px;
 		}
 	
 		header #social {
-			background: #e60f51;
+			background: #E40F4F;
 			color: #ffffff;
-			padding: 10px 30px 11px;
+			padding: 10px 30px 12px;
 			margin-bottom: 41px;
 		}
 		
@@ -35,9 +57,10 @@
 			text-transform: uppercase;
 			font-size: 14px;
 			display: inline-block;
-			margin: 0 20px 0 0;
+			margin: 0 15px 0 0;
 			position: relative;
 			top: 1px;
+			font-family: bentonsansmedium;
 		}
 		
 		header #social ul.icon_list {
@@ -85,18 +108,19 @@
 			color: #ffffff;
 			display: inline-block;
 			background: #ffffff;
-			color: #e60f51;
-			text-transform: uppercase;
+			color: #E40F4F;
 			border-radius: 5px;
-			font-size: 14px;
-			padding: 2px 15px;
+			font-size: 12px;
+			padding: 3px 15px 2px;
+			font-family: bentonsansmedium;
+			text-transform:uppercase;
 		}
 		
 		header #social p.cta a:hover,
 		header #social p.cta a:active,
 		header #social p.cta a:focus {
 			text-decoration: none;
-			color: #1D1D1B;
+			color: #127E89;
 		}
 		
 		header #social div {
@@ -105,13 +129,14 @@
 		
 		header p#branding {
 			float: left;
-			margin: 0 35px 40px 0;
+			margin: 0 40px 40px 0;
+			font-family: bentonsansmedium;
 		}
 		
 		header p#branding a {
 			width: 220px;
-			height: 167px;
-			padding: 53px 0 0 0;
+			height: 169px;
+			padding: 51px 0 0 0;
 			display: block;
 			background: url(<%= asset_path "blocks/large_red.png" %>) no-repeat top left;
 			color: #ffffff;
@@ -126,7 +151,7 @@
 		}
 		
 		header p#branding .init {
-			font-size: 12px;
+			font-size: 13px;
 			display: inline-block;
 			padding: 0 11px 3px;
 			position: relative;
@@ -136,14 +161,14 @@
 			content: '+';
 			position: absolute;
 			left: 0;
-			top : -2px;
+			top : -1px;
 		}
 		
 		header p#branding .init:after {
 			content: '+';
 			position: absolute;
 			right: 0;
-			top : -2px;
+			top : -1px;
 		}
 		
 		header p#branding .title {
@@ -158,23 +183,22 @@
 		}
 		
 		header p#tagline {
-			width: 650px;
+			width: 640px;
 			float: left;
-			color: #e60f51;
+			color: #E40F4F;
 			text-transform: uppercase;
-			font-size: 19px;
-			line-height: 28px;
-			padding-top: 40px;
-		}
-		
-		header p#tagline span {
-			font-weight: 100;
+			font-size: 22px;
+			line-height: 31px;
+			padding-top: 34px;
+			font-family: bentonsansregular;
+			font-weight: normal;
+			margin: 0;
 		}
 		
 		header #primary_navigation {
-			width: 100%;
+			float: left;
+			width: 650px;
 			overflow: hidden;
-			border-top: 1px dotted #e60f51;
 			padding: 20px 0px;
 		}
 		
@@ -182,21 +206,26 @@
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
-			text-align: center;
+			border-top: 1px solid #E40F4F;
+			padding-top: 21px;
+		}
+		
+		header #primary_navigation ul li:first-child a {
+			padding-left: 0;
 		}
  
 		header #primary_navigation ul li {
 			display: inline-block;
 			text-transform: uppercase;
 			font-size: 16px;
-			padding: 0 7px;
-			font-weight: 100;
+			padding: 0px;
+			font-family: bentonsansregular;
 		}
 		
 		header #primary_navigation ul li a {
-			color: #1D1D1B;
+			color: #535251;
 			display: block;
-			padding: 0 15px 0;
+			padding: 0 12px 0;
 			position: relative;
 		}
 				
@@ -204,28 +233,26 @@
 		header #primary_navigation ul li a:focus,
 		header #primary_navigation ul li a:hover,
 		header #primary_navigation ul li a.active {
-			color: #e60f51;
+			color: #E40F4F;
 			text-decoration: none;
 		}
 		
-		header #primary_navigation ul li a:active:before,
-		header #primary_navigation ul li a:focus:before,
-		header #primary_navigation ul li a:hover:before,
-		header #primary_navigation ul li a.active:before {
-			content: '+';
-			position: absolute;
-			left: 0;
-			top : -2px;
+	/* =primary_content */
+	
+		#primary_content {
+			overflow: hidden;
 		}
-		
-		header #primary_navigation ul li a:active:after,
-		header #primary_navigation ul li a:focus:after,
-		header #primary_navigation ul li a:hover:after,
-		header #primary_navigation ul li a.active:after {
-			content: '+';
-			position: absolute;
-			right: 0;
-			top : -2px;
+	
+		#primary_content #schemantics {
+			float: left;
+			width: 550px;
+		}
+	
+		#primary_content aside {
+			width: 400px;
+			float: right;
+			border-left: 1px dotted #E40F4F;
+			padding-left: 30px;
 		}
 		
 	/* =footer */

@@ -1,3 +1,24 @@
 <section id="primary_content" class="container">
-	<h1>Resources</h1>
+	<h1>Resources to help the intrapreneur in you</h1>
+	
+	<div id="schemantics">
+	
+	<% if @resources.any? %>
+		<% @resources.each do |resource| %>
+		
+			<article class="resource">
+				<h2><%= link_to resource.title, resource.url %></h2>
+				<%= simple_format resource.body %>
+			</article>
+			
+		<% end %>
+	<% end %>
+	
+	</div>
+	
+	<aside>
+		<h2>Something to add?</h2>
+		<p><%= link_to "Tell us" %> about your resource.</p>
+	</aside>
+	
 </section>

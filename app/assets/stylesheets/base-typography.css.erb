@@ -1,40 +1,73 @@
+@font-face {
+    font-family: 'bentonsansbold';
+    src: url(<%= asset_path "bentonsans-bold-webfont.eot" %>);
+    src: url(<%= asset_path "bentonsans-bold-webfont.eot?#iefix" %>) format('embedded-opentype'),
+         url(<%= asset_path "bentonsans-bold-webfont.woff" %>) format('woff'),
+         url(<%= asset_path "bentonsans-bold-webfont.ttf" %>) format('truetype'),
+         url(<%= asset_path "bentonsans-bold-webfont.svg#bentonsansbold" %>) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bentonsansregular';
+    src: url(<%= asset_path "bentonsans-light-webfont.eot" %>);
+    src: url(<%= asset_path "bentonsans-light-webfont.eot?#iefix" %>) format('embedded-opentype'),
+         url(<%= asset_path "bentonsans-light-webfont.woff" %>) format('woff'),
+         url(<%= asset_path "bentonsans-light-webfont.ttf" %>) format('truetype'),
+         url(<%= asset_path "bentonsans-light-webfont.svg#bentonsansregular" %>) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bentonsansmedium';
+    src: url(<%= asset_path "bentonsans-medium-webfont.eot" %>);
+    src: url(<%= asset_path "bentonsans-medium-webfont.eot?#iefix" %>) format('embedded-opentype'),
+         url(<%= asset_path "bentonsans-medium-webfont.woff" %>) format('woff'),
+         url(<%= asset_path "bentonsans-medium-webfont.ttf" %>) format('truetype'),
+         url(<%= asset_path "bentonsans-medium-webfont.svg#bentonsansmedium" %>) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body { 
 	font-family: Helvetica, Arial, sans-serif; 
-	color: #1D1D1B;
+	color: #535251;
 	-webkit-font-smoothing: antialiased;
 }
 
-::selection { background:#e60f51; color:#ffffff; }
-::-moz-selection { background:#e60f51; color:#ffffff; }
-::-webkit-selection { background:#e60f51; color:#ffffff; }
+::selection { background:#E40F4F; color:#ffffff; }
+::-moz-selection { background:#E40F4F; color:#ffffff; }
+::-webkit-selection { background:#E40F4F; color:#ffffff; }
 
 /* =h1 */
 
   h1 { 
-    font-size: 27px; 
-		line-height: 31px;
-    font-weight: 100;
-		padding-top: 2px;
-		margin-bottom: 33px;
+    font-size: 24px; 
+		line-height: 28px;
+		margin-bottom: 40px;
+		color: #E40F4F;
+		border-bottom: 1px dotted #E40F4F;
+		padding: 0px 0 23px;
+		font-family: bentonsansregular;
+		font-weight: normal;
   }
 
 /* =h2 */
 
   h2 { 
-		font-size: 22px; 
+		font-size: 18px; 
 		line-height: 26px;
 		margin-bottom: 25px;
 		font-weight: normal;
+		color: #535251;
+		font-family: bentonsansregular;
+		text-transform: uppercase;
   }
-
-	aside h2 {
-		font-size: 19px;
-		margin-bottom: 17px;
-	}
-	
-	aside h2:first-child {
-		padding-top: 40px;
-	}
 
 /* =h3 */
 
@@ -49,7 +82,7 @@ body {
   p { 
     font-size: 15px;
     line-height: 22px; 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
 	p.footnote {
@@ -58,7 +91,7 @@ body {
 
 /* =a */
 
-  a { color: #e60f51; text-decoration: none; }
+  a { color: #E40F4F; text-decoration: none; }
   a:hover, a:focus, a:active { text-decoration: underline; }
 
 /* =ul,ol,dl */

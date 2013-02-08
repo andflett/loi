@@ -52,18 +52,18 @@
 					<li class="linkedin"><%= link_to "LinkedIn" %></li>
 				</ul>
 				
-				<p class="cta"><%= link_to "Join us!", join_path %></li>
+				<p class="cta"><%= link_to "Join the league", join_path %></p>
 
 			</div>
 			
 			<p id="branding"><%= link_to "<span class=\"init\">The</span> <span class=\"title\">League of <br />Intrapreneurs</span>".html_safe, root_path %></p>
-			<p id="tagline">The League of Intrapreneurs is a global movement of corporate changemakers working to transforming business from the inside out.</p>
+			<p id="tagline">The League of Intrapreneurs is a global movement of corporate changemakers working to transform business from the inside out</p>
 			<nav id="primary_navigation">
 				<ul>
-					<li><%= link_to "Inspiration", root_path, :class => ("active" if params[:controller] == "home") %></li>
-					<li><%= link_to "About the League", about_path, :class => ("active" if params[:action] == "about") %></li>
-					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
+					<li><%= link_to "Inspiration", inspiration_path, :class => ("active" if params[:controller] == "posts") %></li>
+					<li><%= link_to "About", about_path, :class => ("active" if params[:action] == "about" || params[:action] == "partners") %></li>
 					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>
+					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
 				</ul>
 			</nav>
 			
@@ -74,7 +74,6 @@
 		</div>
 	
 		<footer class="container">
-			Twitter
 			<p id="colophon">Copyright &copy; Imaginals 2013, view our <%= link_to "privacy policy", privacy_path %></p>
 		</footer>
 
