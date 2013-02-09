@@ -8,6 +8,7 @@
 	
 	<aside>
 		<% if @types.any? %>
+		<h2>Type of inspiration</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
 				<% @types.each do |type| %>
@@ -18,6 +19,7 @@
 		<% end %>
 
 		<% if @tags.any? %>
+		<h2>Tags</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
 				<% @tags.each do |tag| %>
