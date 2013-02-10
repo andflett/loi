@@ -18,7 +18,7 @@
 	
 	<aside>
 		<% if @types.any? %>
-		<h2>Post format</h2>
+		<h2>Post types</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
 				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All", post_filter_path(params[:tag], nil) %></li>
