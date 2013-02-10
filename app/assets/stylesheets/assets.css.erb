@@ -11,12 +11,47 @@
 
 	.print { display: none; margin-bottom: 50px; margin-top: 30px; }
 
+	#main p.cta {
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+		
+	#main p.cta a {
+		color: #ffffff;
+		display: inline-block;
+		background: #ffffff;
+		color: #E40F4F;
+		border-radius: 3px;
+		font-size: 12px;
+		padding: 3px 15px 3px;
+		font-family: bentonsansmedium;
+		text-transform:uppercase;
+	}
+		
+	#main aside p.cta {
+		float: right;
+	}
+		
+	#main p.cta a:hover,
+	#main p.cta a:active,
+	#main p.cta a:focus {
+		text-decoration: none;
+		color: #86cbc8;
+	}
+
+	#main aside p.core_action {
+		position: absolute;
+		top: 31px;
+		right: 30px;
+	}
+
 /* =filters */
 
 	.filters {
 		padding: 0;
 		overflow: hidden;
-		margin-bottom: 0 20px;
+		margin: 0 0 20px;
 		list-style-type: none;
 	}
 	
@@ -30,14 +65,19 @@
 		display: block;
 		padding: 0 12px;
 		line-height: 26px;
-		font-size: 12px;
-		background: #E40F4F;
-		color: #ffffff;
+		font-size: 11px;
+		background: #ffffff;
+		color: #E40F4F;
+		border-radius: 3px;
+		font-family: bentonsansmedium;
+		text-transform:uppercase;
 	}
 	
 	.filters li a:hover,
 	.filters li a:focus,
-	.filters li a:active {
+	.filters li a:active,
+	.filters li.active a {
 		text-decoration: none;
-		background: #127E89;
+		background: #86cbc8;
+		color: #fff;
 	}

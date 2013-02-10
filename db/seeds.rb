@@ -72,7 +72,7 @@ Event.create([
 		date: Date.new(2013,6,6)
 	},
 	{
-		title: "PODER Awards,",
+		title: "PODER Awards, Miami, FL",
 		body: "The PODER Business Awards celebrate excellence and leadership in the Americas by	recognizing those men and women who have demonstrated remarkable strategy, vision and execution in their respective businesses and organizations; those who are changing or can change the region's development dynamics on several fronts. Intrapreneurs from the Americas will be recognized at these awards.",
 		url: "http://poderawards.com/",
 		date: Date.new(2013,11,6)

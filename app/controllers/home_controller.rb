@@ -1,9 +1,11 @@
 class HomeController < ApplicationController
 
 	def index
-	  @posts = Post.all
-		@resource = Resource.features.limit(1)
-		@event = Event.features.limit(1)
+	  
+		@posts = Post.all
+		@resource = Resource.features
+		@event = Event.features
+			
   end
 
 end

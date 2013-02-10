@@ -12,10 +12,7 @@ Leagueofintrapreneurs::Application.routes.draw do
   end
 
   resources :posts, :only => [:show] do
-		get :autocomplete_tag_name, :on => :collection  
-		collection do 
-			resources :types, :only => [:show]
-		end
+		get :autocomplete_tag_name, :on => :collection
 	end
 
 	resources :events, :only => [:index]
@@ -26,7 +23,8 @@ Leagueofintrapreneurs::Application.routes.draw do
   match "partners" => "colophon#partners"
   match "privacy" => "colophon#privacy"
 	match "inspiration" => "posts#index"
-	
+	match "inspiration/(:tag)/(type/:type)" => "posts#filtered", :as => "post_filter"
+
 	root :to => "home#index"
 
 end

@@ -83,11 +83,12 @@
     display: block; 
     position: relative;
 		text-align: left;
-		text-transform: uppercase;
 		color: #999;
-    font-size: 11px;
+    font-size: 16px;
 		line-height: 12px;
     border: 0;
+		font-family: bentonsansregular;
+
   }
 
 	.string label.js,
@@ -95,26 +96,28 @@
 	.url label.js,
 	.password label.js {
 		position: absolute;
-		top: 8px;
-		left: 8px;
+		top: 14px;
+		left: 14px;
 	}
   
 /* =input */
 
-	.input { position: relative; }
+	.input { position: relative; margin-bottom: 10px; }
 
   .string input, 
 	.email input,
 	.url input,
 	.password input,
 	.integer input {  
-    padding: 3px 8px 2px;
+    padding: 10px 10px 8px;
 		color: #E40F4F;
 		background-color: #ffffff;
     margin: 0; 
-    font-size: 11px;
+    font-size: 16px;
 		line-height: 20px;
     border: 0;
+		width: 280px;
+		border-radius: 5px;
 		-webkit-font-smoothing: antialiased;
   }
  
@@ -189,11 +192,17 @@
 		text-transform: uppercase;
 		display: inline-block;
 		font-size: 12px;
-		padding: 5px 8px;
+		padding: 7px 12px;
 		text-align: center;
 		background: #ffffff;
 		border: 0;
 		cursor: pointer;
+		font-family: bentonsansmedium;
+		border-radius: 5px;
+	}
+	
+	input[type="submit"]:hover {
+		color: #127E89;
 	}
 	
 /* Errors */

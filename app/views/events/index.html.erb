@@ -1,14 +1,19 @@
 <section id="primary_content" class="container">
-	<h1>Intrapreneurial events</h1>
+	<h1>Events for the Intrapreneur</h1>
 	
 	<div id="schemantics">
 		<% if @events.any? %>
 			<% @events.each do |event| %>
 		
 				<article class="event">
-					<h2><%= link_to event.title, event.url %></h2>
-					<time><%= event.date.to_s(:article) %></time>
-					<%= simple_format event.body %>
+					<time>
+						<%= event.date.strftime('%A') %> <%= event.date.day.ordinalize %>
+						<span><%= event.date.strftime('%B') %></span>
+					</time>
+					<div class="content">
+						<h2><%= link_to event.title, event.url %></h2>
+						<%= simple_format event.body %>
+					</div>
 				</article>
 			
 			<% end %>
@@ -16,18 +21,21 @@
 			<p>We're not aware of any events coming up, <%= link_to "let us know" %> if you have one to share.</p>
 		<% end %>
 	</div>
-	
-	<% if @posts.any? %>
+		
 	<aside>
-		<h2>Inspiration from past events</h2>
+		
+		<p class="cta core_action"><%= link_to "Add an event", "mailto:hello@leagueofintrapreneurs.com?subject=New intrapreneurial event" %></p>
+		
+		<% if @posts.any? %>
+		<h2>Inspiration</h2>
 		
 		<ul class="post_blocks">
 		<% @posts.each do |post| %>
 			<%= render :partial => "posts/block", :locals => {:post=>post} %>
 		<% end %>
 		</ul>
+		<% end %>
 		
 	</aside>
-	<% end %>
-	
+
 </section>

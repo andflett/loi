@@ -1,29 +1,39 @@
 <section id="primary_content" class="container">
 	
+	<h1>Inspiration <%= "&ndash; #{@type.title.pluralize}".html_safe unless @type.nil? %></h1>
+	
 	<div id="schemantics">
+		
+		<% if @posts.any? %>
 		<ul class="content_grid">
-
+			<% @posts.each do |post| %>
+				<%= render :partial => "posts/block", :locals => {:post=>post} %>
+			<% end %>
 		</ul>
+		<% else %>
+		<p>Nothing here yet!</p>
+		<% end %>
+		
 	</div>
 	
 	<aside>
 		<% if @types.any? %>
-		<h2>Type of inspiration</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
+				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All", post_filter_path(params[:tag], nil) %></li>
 				<% @types.each do |type| %>
-					<li><%= link_to type.title %></li>
+					<li <%= 'class=active' if params[:type] == type.slug %>><%= link_to type.title.pluralize, post_filter_path(params[:tag], type.slug) %></li>
 				<% end %>
 			</ul>
 		</nav>
 		<% end %>
 
 		<% if @tags.any? %>
-		<h2>Tags</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
+				<li <%= 'class=active' if params[:tag].nil? %>><%= link_to "All", post_filter_path(nil, params[:type]) %></li>
 				<% @tags.each do |tag| %>
-					<li><%= link_to tag.name %></li>
+					<li <%= 'class=active' if params[:tag] == tag.slug %>><%= link_to tag.name, post_filter_path(tag.slug, params[:type]) %></li>
 				<% end %>
 			</ul>
 		</nav>

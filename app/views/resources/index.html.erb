@@ -1,24 +1,23 @@
 <section id="primary_content" class="container">
-	<h1>Resources for the intrapreneur</h1>
+	<h1>Resources for the Intrapreneur</h1>
 	
 	<div id="schemantics">
 	
-	<% if @resources.any? %>
-		<% @resources.each do |resource| %>
+		<% if @resources.any? %>
+			<% @resources.each do |resource| %>
 		
-			<article class="resource">
-				<h2><%= link_to resource.title, resource.url %></h2>
-				<%= simple_format resource.body %>
-			</article>
+				<article class="resource">
+					<h2><%= link_to resource.title, resource.url %></h2>
+					<%= simple_format resource.body %>
+				</article>
 			
+			<% end %>
 		<% end %>
-	<% end %>
 	
 	</div>
 	
 	<aside>
-		<h2>Share with us</h2>
-		<p><%= link_to "Tell us" %> about your resource.</p>
+		<p class="cta core_action"><%= link_to "Add a resource", "mailto:hello@leagueofintrapreneurs.com?New intrapreneurial resource" %></p>
 	</aside>
 	
 </section>

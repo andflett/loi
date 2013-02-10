@@ -30,6 +30,12 @@ $(document).ready(function(){
 	  return false;   
 	});
 	
+	// Externals
+	$('a:external').click(function(e){
+	    e.preventDefault();
+	    window.open(this.href);
+	});
+	
 });
 
 function scrollToElement(element) {
@@ -39,3 +45,10 @@ function scrollToElement(element) {
     easing:'swing'
   });
 }
+
+$.expr[':'].external = function(obj){
+    return !obj.href.match(/^mailto\:/)
+           && (obj.hostname != location.hostname || /.pdf$/.test(obj.href))
+           && !obj.href.match(/^javascript\:/)
+           && !obj.href.match(/^$/)
+};

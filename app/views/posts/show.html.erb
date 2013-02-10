@@ -1,7 +1,7 @@
 <section id="primary_content" class="container">
 	<article class="post">
 		<h1><%= @post.title %></h1>
-		<time>Posted on <%= @post.created_at.to_formatted_s(:article) %> <%= "by #{link_to @post.user.short_name, member_path(@post.user)}".html_safe unless @post.user.nil? %></time>
+		<time>Posted on <%= @post.created_at.to_formatted_s(:article) %></time>
 		<% if @post.body.is_json? %>
 		<%= render_sir_trevor(@post.body) %>
 		<% else %>

@@ -16,6 +16,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'country-select'
 
+gem 'twitter'
+gem 'twitter-text'
+
 gem 'activeadmin', '~> 0.5.0'
 gem 'just-datetime-picker'
 gem 'formtastic', '~> 2.1.1'
