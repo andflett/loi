@@ -6,13 +6,18 @@ $(document).ready(function(){
 		label = $($(el).find('label')[0]).addClass('js');
 		label.text(label.text().replace('*',''))
 		
+		
 		if($(el).hasClass('text')) {
 			input = $($(el).find('textarea')[0]);
 		} else {
 			input = $($(el).find('input')[0]);
 		}
 		
-		input.bind('focus',function(ev){ $($(this).siblings('label')[0]).hide();  });
+		label.bind('click',function(ev){
+			$(this).siblings('input')[0].focus();
+		});
+		
+		input.bind('focus',function(ev){ $($(this).siblings('label')[0]).hide(); });
 		
 		input.bind('blur',function(ev){
 			if($(this).val()=='') {
