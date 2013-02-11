@@ -61,8 +61,9 @@
 			<nav id="primary_navigation">
 				<ul>
 					<li><%= link_to "Inspiration", inspiration_path, :class => ("active" if params[:controller] == "posts") %></li>
-					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>
 					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
+					
+					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>
 					<li><%= link_to "About the League", about_path, :class => ("active" if params[:action] == "about" || params[:action] == "partners") %></li>
 					
 				</ul>
