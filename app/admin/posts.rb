@@ -24,6 +24,10 @@ ActiveAdmin.register Post do
 			f.autocomplete_field :tag_list, autocomplete_tag_name_posts_path, :"data-delimiter" => ', '
 		end
 		
+		f.inputs "Type of post" do
+				f.input :type
+		end
+		
 		unless f.object.new_record?
 			f.inputs "Dates" do
 				f.input :created_at, :label => "Published at" 

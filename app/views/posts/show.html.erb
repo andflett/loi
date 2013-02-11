@@ -1,7 +1,7 @@
 <section id="primary_content" class="container">
 	<article class="post">
 		<h1><%= @post.title %></h1>
-		<time>Posted on <%= @post.created_at.to_formatted_s(:article) %></time>
+		<time>Shared <%= @post.created_at.to_formatted_s(:article) %> in <em><%= @post.tags.join(', ') %></em></time>
 		<% if @post.body.is_json? %>
 		<%= render_sir_trevor(@post.body) %>
 		<% else %>

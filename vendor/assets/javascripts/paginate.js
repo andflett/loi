@@ -34,7 +34,7 @@
 		var options = $.extend(defaults, options); 
 		var step = options.step;
 		var lower, upper;
-		var children = $(this).children('fieldset');
+		var children = $(this).children('li');
 		var count = children.length;
 		var obj, next, prev;		
 		var pages = Math.floor(count/step);
@@ -82,7 +82,6 @@
 		};
 		
 		this.each(function(){ 
-			
 			obj = this;
 			
 			if(count>step){

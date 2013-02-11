@@ -26,10 +26,8 @@
 		
 		<p class="cta core_action"><%= link_to "Add an event", "mailto:hello@leagueofintrapreneurs.com?subject=New intrapreneurial event" %></p>
 		
-		<% if @posts.any? %>
-		<h2>Inspiration</h2>
-		
-		<ul class="post_blocks">
+		<% if @posts.any? %>		
+		<ul class="content_grid">
 		<% @posts.each do |post| %>
 			<%= render :partial => "posts/block", :locals => {:post=>post} %>
 		<% end %>

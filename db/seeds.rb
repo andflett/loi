@@ -3,11 +3,11 @@
 
 Type.delete_all
 Type.create([
+	{ title: 'Link' },
   { title: 'Article' },
   { title: 'Podcast' },
   { title: 'Video' },
-  { title: 'Quote' },
-  { title: 'Link' }
+  { title: 'Quote' }
 ])
 
 Resource.delete_all

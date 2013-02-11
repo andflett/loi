@@ -1,10 +1,79 @@
 <section id="featured_content" class="container">
+	
+	
 	<ul id="archetypes">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li>
+			<div class="media">
+				<h3>The Silo Buster</h3>
+				<p class="intro">Inspiring systemic change from the back room to the boardroom!</p>
+				<p><strong>Super Power:</strong> The Silo Buster has an innate ability to look across traditional corporate boundaries to find problem solvers and partners. What’s important for her is building teams that deliver solutions.  She doesn’t have time to worry about pesky little things like job titles, remits and routine.</p>
+				<p><strong>Kryptonite:</strong> No one puts Silo-Buster in a corner. She needs space and freedom to build collaborations to save the world.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The On-Top-of-My-Day-Jobber</h3>
+				<p class="intro">Passionately adding to their daily challenges for the good of the world!</p>
+				<p><strong>Super Power:</strong> The ability to catalyze multiple intrapreneurial projects while still delivering on her day job. She finds ways to shed the redundant and unproductive in search of uber efficiency. (Plus, she never sleeps.)</p>
+				<p><strong>Kryptonite:</strong> She loses her mojo in long, drawn-out team meetings and when filling out time sheets (or similar). Help her to streamline the basics, creating space for more meaningful work.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>		
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Tea-Time Tinkerer</h3>
+				<p class="intro">Endlessly curious in their pursuit to change business for the better!</p>
+				<p><strong>Super Power:</strong> The ability to see possibility in every challenge. The tea-time tinkerer doesn’t waste time thinking about what could be, but dives in straight away and gets prototyping.</p>
+				<p><strong>Kryptonite:</strong> Tea-time tinkerers are a bit trigger happy - ready, aim, fire! They believe the learning comes through doing, not through PowerPoint. Give them permission to experiment, but also help them to experiment in the right ways so they don’t go tinkering down the wrong paths.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Secret Change Agent</h3>
+				<p class="intro">Working tirelessly outside of the spotlight for a better world!</p>
+				<p><strong>Super Power:</strong> The ability to seamlessly blend and camouflage into corporate culture. No one suspects they have a hidden agenda to change the world! They have powerful allies who help them create air cover in the early stages of a project.</p>
+				<p><strong>Kryptonite:</strong> Secret change agents operate under the radar – so don’t out them until the timing is right. Let them work diligently on the ground to generate proof points for leadership buy-in.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Desktop Futurist</h3>
+				<p class="intro">Rethinking business as usual with an unbreakable spirit!</p>
+				<p><strong>Super Power:</strong> Desktop Mavericks have a keen ability to look over the horizon – to see the next wave of the corporate business model.</p>
+				<p><strong>Kryptonite:</strong> Don’t harsh their mellow with talk of quarterly returns – these intrapreneurs are long-term thinkers. Ask them about what they see in the future and why you should care.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Corporate Catalyst</h3>
+				<p class="intro">The charismatic indispensable activist in your boardroom!</p>
+				<p><strong>Super Power:</strong> An undeniable charm and ability to persuade even the most ardent of naysayers. She brings her optimism and passion to work with her each and every day and creates possibilities where others see none.</p>
+				<p><strong>Kryptonite:</strong> The word ‘no.’ These intrapreneurs are natural born cheerleaders. To inspire them, use generative language, such as ‘YES, AND’ rather than ‘NO’ or ‘BUT’. </p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Super Connector</h3>
+				<p class="intro">Building relationships for world changing impact!</p>
+				<p><strong>Super Power:</strong> The most friends and followers you’ve ever seen and an uncanny ability to know who to connect with whom and when. These people thrive on relationships and feeling connected to a bigger community.</p>
+				<p><strong>Kryptonite:</strong> Censorship and isolation. Super connectors need the freedom to develop networks outside the organization and much of this is done through social media. Don’t block her twitter account or take away her iPhone.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
+		<li>
+			<div class="media">
+				<h3>The Office Vigilante</h3>
+				<p class="intro">Ambitiously pushing forth game-changing innovation for social impact!</p>
+				<p><strong>Super Power:</strong> Simply put, he’s fearless. He sees the greater risk is in not acting, so rather than worrying about promotions, politics or pay raises, he focuses on how to leverage the company’s assets for good.</p>
+				<p><strong>Kryptonite:</strong> Incrementalism. This vigilante wants results, so inspire him by setting bold goals.</p>
+			</div>
+			<%= image_tag "illustrations/1.gif" %>
+		</li>
 	</ul>
 </section>
 
@@ -13,16 +82,14 @@
 	<% if @resource.any? %>
 	<div class="panel">	
 		<h2><%= link_to "Resources", resources_path %></h2>
-		<% resource = @resource.first %>
-		<p><%= resource.title %></p>
+		<p>Little bit of copy to introduce the resources section.</p>
 	</div>
 	<% end %>
 	
 	<% if @event.any? %>
 	<div class="panel">	
 		<h2><%= link_to "Events", events_path %></h2>
-		<% event = @event.first %>
-		<p><%= event.title %></p>
+		<p>Little bit of copy to introduce the events section.</p>
 	</div>
 	<% end %>
 	

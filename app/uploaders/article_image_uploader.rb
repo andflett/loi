@@ -11,7 +11,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   process :resize_to_fit => [640,nil]
 
   version :thumbnail do
-    process :resize_to_fill => [185,110]
+    process :resize_to_fill => [231,150]
   end
   
   version :panel do 

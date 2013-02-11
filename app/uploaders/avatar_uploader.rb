@@ -8,10 +8,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :resize_to_fill => [120,120]
+  process :resize_to_fill => [231,130]
 
-  version :compact do
-    process :resize_to_fill => [60,60]
+  version :thumbnail do
+    process :resize_to_fill => [2310,130]
   end
 
   def extension_white_list

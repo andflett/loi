@@ -84,5 +84,75 @@
 		background: #127E89;
 	}
 	
+/* =post */
+
+	.post h1 {
+		border-bottom: 0;
+		margin: 0;
+		padding: 0 0 10px 0;
+	}
+	
+	.post time { 
+		border-bottom: 1px dotted #E40F4F;
+		padding-bottom: 15px;
+		margin-bottom: 20px;
+	}
+	
+	.post_block {
+		position: relative;
+	}
+	
+	.post_block img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+	
+	.post_block .media {
+		height: 130px;
+		width: 211px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		background: #ffffff;
+		visibility: hidden;
+		padding: 10px;
+	}
+	
+	.no_hero .media {
+		visibility: visible;
+	}
+	
+	.post_block .media h2 {
+		font-size: 14px;
+		margin-bottom: 7px;
+		font-weight: normal;
+	}
+	
+	.post_block .media p {
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 19px;
+	}
+	
+	.post_block {
+		display: inline-block;
+		width: 231px;
+		height: 150px;
+		margin: 0 30px 30px 0;
+		padding: 0;
+	}
+
+	.post_block a,
+	.post_block a img {
+		display: block;
+	}
+
+	.post_block:hover .media {
+		visibility: visible;
+	}
+	
 	
 

@@ -18,10 +18,9 @@
 	
 	<aside>
 		<% if @types.any? %>
-		<h2>Post types</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
-				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All", post_filter_path(params[:tag], nil) %></li>
+				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All post types", post_filter_path(params[:tag], nil) %></li>
 				<% @types.each do |type| %>
 					<li <%= 'class=active' if params[:type] == type.slug %>><%= link_to type.title.pluralize, post_filter_path(params[:tag], type.slug) %></li>
 				<% end %>
@@ -30,10 +29,9 @@
 		<% end %>
 
 		<% if @tags.any? %>
-		<h2>Filter by tag</h2>
 		<nav id="type_navigation">
 			<ul class="filters">
-				<li <%= 'class=active' if params[:tag].nil? %>><%= link_to "All", post_filter_path(nil, params[:type]) %></li>
+				<li <%= 'class=active' if params[:tag].nil? %>><%= link_to "All tags", post_filter_path(nil, params[:type]) %></li>
 				<% @tags.each do |tag| %>
 					<li <%= 'class=active' if params[:tag] == tag.slug %>><%= link_to tag.name, post_filter_path(tag.slug, params[:type]) %></li>
 				<% end %>

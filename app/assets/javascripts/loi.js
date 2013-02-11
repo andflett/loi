@@ -41,6 +41,9 @@ $(document).ready(function(){
 	    window.open(this.href);
 	});
 	
+	// Scrolly thing
+	$('#archetypes').easyPaginate({step:1})
+	
 });
 
 function scrollToElement(element) {
