@@ -79,19 +79,15 @@
 
 <section id="primary_content" class="container panels">
 	
-	<% if @resource.any? %>
 	<div class="panel">	
 		<h2><%= link_to "Resources", resources_path %></h2>
 		<p>Little bit of copy to introduce the resources section.</p>
 	</div>
-	<% end %>
 	
-	<% if @event.any? %>
 	<div class="panel">	
 		<h2><%= link_to "Events", events_path %></h2>
 		<p>Little bit of copy to introduce the events section.</p>
 	</div>
-	<% end %>
 	
 	<div class="panel">	
 		<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>

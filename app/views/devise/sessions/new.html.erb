@@ -1,8 +1,13 @@
-<section id="primary_content" class="single">
-
-	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "primary_panel" }) do |f| %>
-
-		<h1><%= (params[:authfailure]) ? "The bit where you log in" : "Welcome back" %></h1>
+<section id="primary_content" class="container">
+	
+	<h1>Welcome back</h1>
+	
+	<div id="schemantics">
+		<p>Please login to access the League of Intrapreneurs admin area.</p>
+	</div>
+	
+	<aside>
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "" }) do |f| %>
 
 		<% if params[:authfailure] %>
 		<% else %>
@@ -11,7 +16,7 @@
 
 	  	<%= field_set_tag do %>
 	    	<%= f.input :email, :required => false, :label => "Your email address", :input_html => { :autocomplete => "off" }, :wrapper_html => { :class => "smart_label" } %>
-	    	<%= f.input :password, :required => false, :label => "Your password", :wrapper_html => { :class => "smart_label" }, :hint => (link_to "?", new_password_path(resource_name), :title => "Request a new password")%>
+	    	<%= f.input :password, :required => false, :label => "Your password", :wrapper_html => { :class => "smart_label" }%>
 	    	<%= f.input :remember_me, :as => :hidden, :input_html => { :value => 1 } if devise_mapping.rememberable? %>
 		<% end %>
 
@@ -20,5 +25,6 @@
 		<% end %>
 
 	<% end %>
+	</aside>
 	
 </section>
