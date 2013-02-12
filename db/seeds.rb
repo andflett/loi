@@ -49,7 +49,7 @@ Event.create([
 	},
 	{
 		title: "OXJAM, Oxford UK ",
-		body: "We know that the price tag for events like Skoll can be steep - even for corporate executives! So, here's an amazing sister event in Oxford that you can attend for FREE! Running in parallel to the Skoll World Forum on Social Entrepreneurship in Oxford, OxfordJam is a three-day fringe event that creates a space for the nurturing of social economy and social finance projects the world over. For the last 3 years OxfordJam has bravely flipped the traditional conference format on its head! Participants have contributed a wide range of spectacular sessions from all corners of the social economy and session contributors pay to run their sessions.",
+		body: "We know that the price tag for events like Skoll can be steep - even for corporate executives! So, here's an amazing sister event in Oxford that you can attend for FREE! Running in parallel to the Skoll World Forum on Social Entrepreneurship in Oxford, OxfordJam is a three-day fringe event that creates a space for the nurturing of social economy and social finance projects the world over.",
 		url: "http://www.oxfordjam.org.uk/",
 		date: Date.new(2013,4,10)
 	},
@@ -72,7 +72,7 @@ Event.create([
 		date: Date.new(2013,6,6)
 	},
 	{
-		title: "PODER Awards, Miami, FL",
+		title: "PODER Awards, Location TBD",
 		body: "The PODER Business Awards celebrate excellence and leadership in the Americas by	recognizing those men and women who have demonstrated remarkable strategy, vision and execution in their respective businesses and organizations; those who are changing or can change the region's development dynamics on several fronts. Intrapreneurs from the Americas will be recognized at these awards.",
 		url: "http://poderawards.com/",
 		date: Date.new(2013,11,6)

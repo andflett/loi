@@ -1,6 +1,6 @@
 /*
-	Background: DFEFE9
-	Light Blue: A5D6D4
+	Background: A8D7D4
+	Light Blue: A8D7D4
 	Dark Blue: 127E89
 	Light Red: E40F4F
 	Dark Red: 91103D
@@ -11,14 +11,14 @@
 @media all {
 
 	body { 
-		background-color: #ffffff;
+		background: #ffffff url(<%= asset_path "layout/background.jpg" %>) repeat-y top center;
 	}
 	
 	.container {
 		width: 1006px;
 		margin: 0 auto 20px;
 		padding: 30px;
-		background: #DFEFE9;
+		background: #A8D7D4;
 	}
 	
 	.container.panels {
@@ -34,7 +34,7 @@
 		margin: 0 20px 0 0;
 		float: left;
 		padding: 20px 30px;
-		background: #DFEFE9;
+		background: #A8D7D4;
 		height: auto !important;
 		height: 200px;
 		min-height: 200px;
@@ -195,10 +195,10 @@
 			float: left;
 			color: #E40F4F;
 			text-transform: uppercase;
-			font-size: 22px;
-			line-height: 31px;
-			padding-top: 34px;
-			font-family: bentonsansregular;
+			font-size: 21px;
+			line-height: 28px;
+			padding-top: 44px;
+			font-family: bentonsansmedium;
 			font-weight: normal;
 			margin: 0;
 		}
@@ -227,14 +227,15 @@
 			text-transform: uppercase;
 			font-size: 16px;
 			padding: 0px;
-			font-family: bentonsansregular;
+			font-family: bentonsansmedium;
 		}
 		
 		header #primary_navigation ul li a {
-			color: #535251;
+			color: #535150;
 			display: block;
 			padding: 0 12px 0;
 			position: relative;
+			font-family: bentonsansmedium;			
 		}
 				
 		header #primary_navigation ul li a:active,

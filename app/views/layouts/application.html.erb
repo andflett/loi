@@ -57,15 +57,14 @@
 			</div>
 			
 			<p id="branding"><%= link_to "<span class=\"init\">The</span> <span class=\"title\">League of <br />Intrapreneurs</span>".html_safe, root_path %></p>
-			<p id="tagline">The League of Intrapreneurs is a global movement of corporate changemakers working to transform business from the inside out</p>
+			<p id="tagline">The League of Intrapreneurs is a global movement of corporate changemakers working to transform business from the inside out.</p>
 			<nav id="primary_navigation">
 				<ul>
 					<li><%= link_to "Inspiration", inspiration_path, :class => ("active" if params[:controller] == "posts") %></li>
 					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
-					
 					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>
-					<li><%= link_to "About the League", about_path, :class => ("active" if params[:action] == "about" || params[:action] == "partners") %></li>
-					
+					<li><%= link_to "About", about_path, :class => ("active" if params[:action] == "about") %></li>
+					<li><%= link_to "Partners", partners_path, :class => ("active" if params[:action] == "partners") %></li>	
 				</ul>
 			</nav>
 			
