@@ -111,15 +111,15 @@
 	
 	<div class="panel">	
 		<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
-		<%# cache("tweets", :expires_in => 42.minutes) do  %>
+		<% cache("tweets", :expires_in => 42.minutes) do  %>
 		<ul class="tweets">
-		<%# Twitter.user_timeline("SocIntLeague").first(2).each do |tweet| %>
+		<% Twitter.user_timeline("SocIntLeague").first(2).each do |tweet| %>
 		    <li>
-		    	<%#= auto_link(tweet.text).html_safe %>
+		    	<%= auto_link(tweet.text).html_safe %>
 		    </li>
-		<%# end %>
+		<% end %>
 		</ul>
-		<%# end %>
+		<% end %>
 	</div>
 	
 </section>
