@@ -10,8 +10,12 @@
 
 @media all {
 
-	body { 
-		background: #ffffff url(<%= asset_path "layout/background.jpg" %>) repeat-y top center;
+	body {
+		background: #ffffff;
+	}
+	
+	body.bg {
+		background: #ffffff url(<%= asset_path "layout/stripes_red.gif" %>) repeat top left;
 	}
 	
 	.container {
@@ -21,7 +25,7 @@
 		background: #A8D7D4;
 	}
 	
-	.container.panels {
+	.container.modules {
 		width: 1066px;
 		margin: 0 auto 20px;
 		padding: 0;
@@ -29,7 +33,7 @@
 		overflow: hidden;
 	}
 	
-	.panels .panel {
+	.modules .module {
 		width: 282px;
 		margin: 0 20px 0 0;
 		float: left;
@@ -40,11 +44,11 @@
 		min-height: 220px;
 	}
 	
-	.panels .panel:last-child {
+	.module .module:last-child {
 		margin: 0;
 	}
 	
-	.panels .panel p:last-child {
+	.modules .module p:last-child {
 		margin: 0;
 	}
 	
@@ -132,7 +136,7 @@
 		header #social p.cta a:active,
 		header #social p.cta a:focus {
 			text-decoration: none;
-			color: #127E89;
+			color: #313232;
 		}
 		
 		header #social div {
@@ -203,7 +207,6 @@
 			line-height: 28px;
 			padding-top: 44px;
 			font-family: bentonsansmedium;
-			font-weight: normal;
 			margin: 0;
 		}
 		
@@ -232,14 +235,17 @@
 			font-size: 16px;
 			padding: 0px;
 			font-family: bentonsansmedium;
+			font-weight: 100;		
+			
 		}
 		
 		header #primary_navigation ul li a {
-			color: #535150;
+			color: #535251;
 			display: block;
 			padding: 0 12px 0;
 			position: relative;
-			font-family: bentonsansmedium;			
+			font-weight: bold;
+			font-family: bentonsansregular;
 		}
 				
 		header #primary_navigation ul li a:active,
@@ -277,12 +283,14 @@
 		}
 		
 		footer.container p {
-			font-size: 12px;
-			color: #ffffff;
+			font-size: 13px;
+			margin-bottom: 3px;
 		}
 		
-		footer.container p a {
-			color: #ffffff;
+		footer.container p a:hover,
+		footer.container p a:active,
+		footer.container p a:focus {
+			text-decoration: underline;
 		}
 
 }

@@ -82,45 +82,29 @@
 		
 		<% if @posts.any? %>
 		<ul class="content_grid">
+			
 			<% @posts.each do |post| %>
 				<%= render :partial => "posts/block", :locals => {:post=>post} %>
 			<% end %>
+			
+			<li class="post_block no_hero">
+				<div class="media">
+					<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
+					<% cache("tweets", :expires_in => 42.minutes) do  %>
+					<% begin %>
+						<% Twitter.user_timeline("SocIntLeague").first(1).each do |tweet| %>
+					    	<p><%= auto_link(tweet.text).html_safe %></p>
+						<% end %>
+					<% rescue %>
+						<p>Whoops, looks like we can't reach Twitter right now.</p>
+					<% end %>
+					<% end %>
+				</div>
+			</li>
+			
 		</ul>
 		<% else %>
 		<p>Nothing here yet!</p>
 		<% end %>
 		
 </section>
-
-<section id="primary_content" class="container panels">
-	
-	<div class="panel">	
-		<h2><%= link_to "Resources", resources_path %></h2>
-		<p>While most intrapreneurs are experts at learning by doing, they also crave
-		insights from others taking on the challenge of corporate change. Here we
-		feature resources &ndash; reports, organizations, projects, etc. &ndash; designed to help
-		strengthen intrapreneurial skill sets.</p>
-	</div>
-	
-	<div class="panel">	
-		<h2><%= link_to "Events", events_path %></h2>
-		<p>Intrapreneurs are tackling a wide array of issues &ndash; from health to poverty to
-		environment. Some are working locally, others globally. Here we feature events
-		that are likely to inspire and connect intrapreneurs.</p>
-	</div>
-	
-	<div class="panel">	
-		<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
-		<% cache("tweets", :expires_in => 42.minutes) do  %>
-		<ul class="tweets">
-		<% Twitter.user_timeline("SocIntLeague").first(2).each do |tweet| %>
-		    <li>
-		    	<%= auto_link(tweet.text).html_safe %>
-		    </li>
-		<% end %>
-		</ul>
-		<% end %>
-	</div>
-	
-</section>
-

@@ -1,7 +1,13 @@
 <section id="primary_content" class="container">
-	<h1>Resources</h1>
 	
-	<div id="schemantics">
+	<div id="schemantics" class="panel">
+		
+		<h1>Resources</h1>
+	
+		<div class="abstract">
+			<p class="cta core_action"><%= link_to "Share a resource with us", "mailto:hello@leagueofintrapreneurs.com?New intrapreneurial resource" %></p>
+			<p>While most intrapreneurs are experts at learning by doing, they also crave insights from others taking on the challenge of corporate change. Here we feature resources &ndash; reports, projects and organizations &ndash; designed to help strengthen intrapreneurial skill sets.</p>
+		</div>
 	
 		<% if @resources.any? %>
 			<% @resources.each do |resource| %>
@@ -15,9 +21,5 @@
 		<% end %>
 	
 	</div>
-	
-	<aside>
-		<p class="cta core_action"><%= link_to "Add a resource", "mailto:hello@leagueofintrapreneurs.com?New intrapreneurial resource" %></p>
-	</aside>
 	
 </section>

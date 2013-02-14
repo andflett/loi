@@ -1,5 +1,5 @@
 <section id="primary_content" class="container">
-	<article class="post">
+	<article class="post panel">
 		<h1><%= @post.title %></h1>
 		<time>Shared <%= @post.created_at.to_formatted_s(:article) %> in <em><%= @post.tags.join(', ') %></em></time>
 		<% if @post.body.is_json? %>

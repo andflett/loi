@@ -37,14 +37,10 @@
 	position: relative;
 }
 
-#featured_content #archetypes {
-	min-height: 300px;
-}
-
 #featured_content #archetypes li {
-	background: #ffffff;
+	background: #cee9e7;
 	border-radius: 10px;
-	padding: 20px;
+	padding: 10px 20px 10px;
 	overflow: hidden;
 }
 
@@ -53,27 +49,39 @@
 	color: #E40F4F;
 	font-family: bentonsansmedium;
 	text-transform: uppercase;
-	padding-bottom: 0px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #E40F4F;
+	width:95%;
 }
 
 #featured_content #archetypes .intro {
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	padding-bottom: 0px;
 	font-style: italic;
-	font-size: 14px;
 }
+
+#featured_content #archetypes p {
+	color: #535251;
+	margin-bottom: 25px;
+}
+
+#featured_content #archetypes p:last-child { margin: 0; }
 
 #featured_content #archetypes p strong {
 	color: #E40F4F;
 }
 
 #featured_content #archetypes li .media {
-	width: 500px;
+	width: 600px;
 	float: left;
+	padding: 20px;
 }
 
 #featured_content #archetypes li img {
 	float: right;
+	border-radius: 300px;
+	margin-right: 50px;
+	margin-top: 20px;
 }
 
 #featured_content h2 {
@@ -109,7 +117,7 @@
 	background-repeat: no-repeat;
 	background-position: top left;
 	position: absolute;
-	bottom: 20px;
+	top: 45%;
 	height: 42px;
 	width: 42px;
 	cursor: pointer;
@@ -117,10 +125,10 @@
 
 #featured_content #pagination .prev {
 	background-image: url(<%= asset_path "icons/previous.png" %>);
-	left: 20px;
+	left: 13px;
 }
 
 #featured_content #pagination .next {
 	background-image: url(<%= asset_path "icons/next.png" %>);
-	right: 20px;
+	right: 13px;
 }
