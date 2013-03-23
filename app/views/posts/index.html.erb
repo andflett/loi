@@ -1,8 +1,8 @@
 <section id="primary_content" class="container">
 	
-	<h1>Inspiration <%= "&ndash; #{@type.title.pluralize}".html_safe unless @type.nil? %></h1>
-	
-	<div id="schemantics">
+	<div id="schemantics" class="panel">
+		
+		<h1>Inspiration <%= "&ndash; #{@type.title.pluralize}".html_safe unless @type.nil? %></h1>
 		
 		<% if @posts.any? %>
 		<ul class="content_grid">
@@ -16,7 +16,7 @@
 		
 	</div>
 	
-	<aside>
+	<aside class="panel">
 		<% if @types.any? %>
 		<nav id="type_navigation">
 			<ul class="filters">

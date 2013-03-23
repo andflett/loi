@@ -3,7 +3,8 @@ class ColophonController < ApplicationController
 	def about
 	end
 	
-	def partners
+	def people
+	  @people = Post.all
 	end
 	
 	def join

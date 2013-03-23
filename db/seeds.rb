@@ -2,15 +2,18 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 Type.delete_all
+Event.delete_all
+Resource.delete_all
+
 Type.create([
 	{ title: 'Link' },
   { title: 'Article' },
   { title: 'Podcast' },
   { title: 'Video' },
-  { title: 'Quote' }
+  { title: 'Quote' },
+  { title: 'Profile' }
 ])
 
-Resource.delete_all
 Resource.create([
 	{
 		title: "The Social Intrapreneur: A Field Guide for Corporate Changemakers",
@@ -36,10 +39,14 @@ Resource.create([
 		title: "Ashoka Changemakers",
 		url: "http://www.changemakers.com/intrapreneurs",
 		body: "Ashoka has applied its competition platform to begin sourcing leading intrapreneurs. While the competition has closed, you can still check out the innovative and inspiring entries from around the world."
+	},
+  {
+		title: " Cubicle Warrior Series",
+		url: "/inspiration/cubicle-warrior-series/",
+		body: "A series of podcasts with intrapreneurs."
 	}
 ])
 
-Event.delete_all
 Event.create([
 	{
 		title: "The Skoll World Forum, Oxford UK",

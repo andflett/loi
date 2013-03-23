@@ -20,7 +20,7 @@ Leagueofintrapreneurs::Application.routes.draw do
 	
 	match "join" => "colophon#join"
   match "about" => "colophon#about"
-  match "partners" => "colophon#partners"
+  match "people" => "colophon#people"
   match "privacy" => "colophon#privacy"
 	match "inspiration" => "posts#index"
 	match "inspiration/(:tag)/(type/:type)" => "posts#filtered", :as => "post_filter"

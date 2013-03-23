@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :signed_in_as_owner?
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to hive_dashboard_path, :alert => exception.message
+    redirect_to admin_dashboard_path, :alert => exception.message
   end
   
   def current_ability
