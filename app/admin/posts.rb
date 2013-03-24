@@ -26,10 +26,16 @@ ActiveAdmin.register Post do
 		
 		f.inputs "Type of post" do
 				f.input :type
+				f.input :featured, :label => "Featured on homepage?"
+		end
+		
+		if f.object.new_record? || f.object.user.nil?
+    	f.input :user_id, :as => :hidden, :value => current_user.id
 		end
 		
 		unless f.object.new_record?
 			f.inputs "Dates" do
+			  f.input :published, :label => "Publish this post now?"
 				f.input :created_at, :label => "Published at" 
 			end
 		end
@@ -47,13 +53,6 @@ ActiveAdmin.register Post do
         f.input :body
       end
     end
-
-		f.inputs "State" do
-			if f.object.new_record? || f.object.user.nil?
-	    	f.input :user_id, :as => :hidden, :value => current_user.id
-			end
-			f.input :published, :label => "Publish this post?"
-		end
 		
     f.buttons
   end

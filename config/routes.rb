@@ -17,10 +17,10 @@ Leagueofintrapreneurs::Application.routes.draw do
 
 	resources :events, :only => [:index]
 	resources :resources, :only => [:index]
+	resources :intrapreneurs, :only => [:index,:show], :path => "people", :as => "people"
 	
 	match "join" => "colophon#join"
   match "about" => "colophon#about"
-  match "people" => "colophon#people"
   match "privacy" => "colophon#privacy"
 	match "inspiration" => "posts#index"
 	match "inspiration/(:tag)/(type/:type)" => "posts#filtered", :as => "post_filter"

@@ -1,8 +1,7 @@
 <section id="primary_content" class="container">
+	<h1>Inspiration</h1>
 	
-	<div id="schemantics" class="panel">
-		
-		<h1>Inspiration <%= "&ndash; #{@type.title.pluralize}".html_safe unless @type.nil? %></h1>
+	<div id="schemantics">
 		
 		<% if @posts.any? %>
 		<ul class="content_grid">
@@ -17,17 +16,18 @@
 	</div>
 	
 	<aside class="panel">
+		
 		<% if @types.any? %>
 		<nav id="type_navigation">
 			<ul class="filters">
-				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All types", post_filter_path(params[:tag], nil) %></li>
+				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All inspiration", post_filter_path(params[:tag], nil) %></li>
 				<% @types.each do |type| %>
 					<li <%= 'class=active' if params[:type] == type.slug %>><%= link_to type.title.pluralize, post_filter_path(params[:tag], type.slug) %></li>
 				<% end %>
 			</ul>
 		</nav>
-		<% end %>
-
+    <% end %>
+	
 		<% if @tags.any? %>
 		<nav id="type_navigation">
 			<ul class="filters">

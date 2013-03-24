@@ -5,10 +5,10 @@
 		<title>League of Intrapreneurs</title>
 		
 		<meta name="description" content="League of Intrapreneurs" />
-		<meta name="keywords" content="" />
+		<meta name="keywords" content="intrapreneur, entrapreneur" />
 		<link rel="shortcut icon" href="/favicon.ico?v5" />
 		
-		<meta property="og:title" content="<%= "#{@member.name.titlecase} at " if params[:controller] == "members" && params[:action] == "show" && !@member.nil? %>League of Intrapreneurs" />
+		<meta property="og:title" content="League of Intrapreneurs" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://www.leagueofintrapreneurs.com" />
 		<meta property="og:image" content="http://www.leagueofintrapreneurs.com/assets/branding/og.gif" />
@@ -35,7 +35,7 @@
 		</script>
 		<% end %>
 		
-		<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		<!--<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>-->
 		
 	</head>
 	<body class="<%= "section_#{params[:controller].parameterize.underscore} view_#{params[:action]}"%> <%= "bg" if params[:bg] %>">
@@ -60,7 +60,7 @@
 			<nav id="primary_navigation">
 				<ul>
 					<li><%= link_to "About", about_path, :class => ("active" if params[:action] == "about") %></li>
-					<li><%= link_to "People", people_path, :class => ("active" if params[:action] == "people") %></li>	
+					<li><%= link_to "People", people_path, :class => ("active" if params[:controller] == "intrapreneurs") %></li>	
 					<li><%= link_to "Inspiration", inspiration_path, :class => ("active" if params[:controller] == "posts") %></li>
 					<li><%= link_to "Events", events_path, :class => ("active" if params[:controller] == "events") %></li>
 					<li><%= link_to "Resources", resources_path, :class => ("active" if params[:controller] == "resources") %></li>	

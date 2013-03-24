@@ -3,8 +3,7 @@ class HomeController < ApplicationController
 	def index
 	  
 		@posts = Post.limit(16)
-		@resource = Resource.features
-		@event = Event.features
+		@featured = Event.features + Post.features + Intrapreneur.features
 			
   end
 

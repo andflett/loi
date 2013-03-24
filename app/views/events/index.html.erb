@@ -1,15 +1,9 @@
 <section id="primary_content" class="container">
 	
+	<h1>Events</h1>
 
 	<div id="schemantics" class="panel">
-	
-		<h1>Events</h1>
-		
-		<div class="abstract">
-			<p class="cta core_action"><%= link_to "Tell us about an event", "mailto:hello@leagueofintrapreneurs.com?subject=New intrapreneurial event" %></p>
-			<p>Intrapreneurs are tackling a wide array of issues &ndash; from health to poverty to environment. Some are working locally, others globally. Here we feature events that are likely to inspire and connect intrapreneurs.</p>
-		</div>
-				
+
 		<% if @events.any? %>
 			<% @events.each do |event| %>
 		
@@ -33,14 +27,9 @@
 		
 	<aside>
 		
-		<% if @posts.any? %>		
-		<ul class="content_grid">
-		<% @posts.each do |post| %>
-			<%= render :partial => "posts/block", :locals => {:post=>post} %>
-		<% end %>
-		</ul>
-		<% end %>
-		
+  	<p>Intrapreneurs are tackling a wide array of issues &ndash; from health to poverty to environment. Some are working locally, others globally. Here we feature events that are likely to inspire and connect intrapreneurs.</p>
+		<p class="cta"><%= link_to "Tell us about an event", "mailto:hello@leagueofintrapreneurs.com?subject=New intrapreneurial event" %></p>
+  	
 	</aside>
 
 </section>

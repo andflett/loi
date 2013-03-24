@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class ResourceImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
@@ -8,12 +8,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :panel do
-    process :resize_to_fit => [750,nil]
+  version :thumbnail do
+    process :resize_to_fill => [231,150]
   end
   
-  version :thumbnail do
-    process :resize_to_fit => [300,nil]
+  version :panel do 
+    process :resize_to_fit => [750,nil] 
   end
 
   def extension_white_list

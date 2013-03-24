@@ -1,0 +1,21 @@
+<section id="primary_content" class="container">
+  
+  <h1>People</h1>
+  
+  <div id="schemantics">
+
+	  <% if @intrapreneurs.any? %>
+  	<ul class="content_grid">
+		
+  		<% @intrapreneurs.each do |intrapreneur| %>
+  		  <%= intrapreneur.name %>
+  		<% end %>
+		
+  	</ul>
+  	<% else %>
+  	<p>Nothing here yet!</p>
+  	<% end %>
+  	
+  </div>
+
+</section>

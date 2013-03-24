@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210094101) do
+ActiveRecord::Schema.define(:version => 20130324143243) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -35,6 +35,20 @@ ActiveRecord::Schema.define(:version => 20130210094101) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "intrapreneurs", :force => true do |t|
+    t.string   "name"
+    t.string   "quote"
+    t.string   "job_title"
+    t.string   "link"
+    t.text     "body"
+    t.text     "hero_image"
+    t.string   "slug"
+    t.integer  "user_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "featured",   :default => false
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -46,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130210094101) do
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.boolean  "featured",   :default => false
   end
 
   create_table "resources", :force => true do |t|
@@ -56,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20130210094101) do
     t.datetime "updated_at",                    :null => false
     t.string   "url"
     t.boolean  "featured",   :default => false
+    t.text     "image"
   end
 
   create_table "sir_trevor_images", :force => true do |t|

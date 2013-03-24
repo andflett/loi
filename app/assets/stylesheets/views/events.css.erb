@@ -1,15 +1,36 @@
-.section_events #primary_content #schemantics {
-	float: left;
-	width: 965px;
+.section_events #primary_content,
+.section_resources #primary_content {
+  padding-right: 0;
+  width: 1026px;
 }
 
-.section_events #primary_content aside {
-	width: 231px;
-	float: right;
+.section_events #primary_content #schemantics,
+.section_resources #primary_content #schemantics {
+	width: 680px;
+	background: #cee9e7;
+	padding-top: 25px;
 }
 
-.section_events #primary_content aside h2 {
-	margin-bottom: 17px;
+.section_events #primary_content aside,
+.section_resources #primary_content aside {
+	width: 225px;
+	padding: 0 25px 20px 25px;
+	background: #ffffff;
+	border-radius: 0 0 0 5px;
+	position: relative;
+	top: -32px;
+	font-family: bentonsansregular;
+}
+
+.section_events #primary_content aside p,
+.section_resources #primary_content aside p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.section_events #primary_content aside p.cta a,
+.section_resources #primary_content aside p.cta a {
+  width: 100%;
 }
 
 /* =events */
@@ -21,12 +42,20 @@
 	}
 	
 	.event h2 {
-		margin-bottom: 6px;
+		margin-bottom: 7px;
+	}
+	
+	.event h2 a {
+	  display: inline-block;
+	}
+	
+	.event p {
+	  font-size: 15px;
 	}
 
 	.event time {
 		display: block;
-		width: 210px;
+		width: 190px;
 		float: left;
 		font-size: 16px;
 		line-height: 18px;
@@ -42,5 +71,5 @@
 	
 	.event .content {
 		float: left;
-		width: 680px;
+		width: 490px;
 	}

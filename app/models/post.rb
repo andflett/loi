@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
 
 	scope :published, where(:published => true)
+	scope :features, where(:featured => true)
 
-  attr_accessible :excerpt, :title, :body, :user_id, :slug,
+  attr_accessible :excerpt, :title, :body, :user_id, :slug, :featured,
 									:hero_image, :type_id, :published, :created_at, :tag_list
   
 	belongs_to :user

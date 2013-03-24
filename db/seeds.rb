@@ -10,8 +10,7 @@ Type.create([
   { title: 'Article' },
   { title: 'Podcast' },
   { title: 'Video' },
-  { title: 'Quote' },
-  { title: 'Profile' }
+  { title: 'Quote' }
 ])
 
 Resource.create([

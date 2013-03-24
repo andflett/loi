@@ -36,6 +36,7 @@ ActiveAdmin.register Resource do
     f.inputs "Resource" do   
 			f.input :featured, :label => "Featured on homepage?"
       f.input :title
+      f.input :image
 			f.input :url, :label => "Link"
       f.input :body, :label => "Description", :input_html => { :rows => 5 }
 			if f.object.new_record? || f.object.user.nil?
