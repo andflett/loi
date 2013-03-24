@@ -6,6 +6,7 @@
 		<% @featured.each do |featured| %>
 			<li>
 			  <% if featured.class == Post %>
+			  
 			    <div class="splash">
   			    <h2><span class="type"><%= featured.type.title %></span><br /><span><%= featured.title %></span></h2>
   			    <% unless featured.hero_image.url.nil? %>
@@ -16,19 +17,78 @@
   			    <div class="excerpt pane">
   			      <%= simple_format featured.excerpt %>
   			    </div>
+  			    
+  			    <% if featured.type.title == "Video" %>
+  			      <div class="option video pane">
+    			      <%= link_to "Watch video", post_path(featured) %>
+    			    </div>
+    			    <div class="option related pane">
+    			      <%= link_to "Browse other videos", post_filter_path(:type => featured.type) %>
+    			    </div>
+    			  <% elsif featured.type.title == "Podcast" %> 
+    			    <div class="option read pane">
+    			      <%= link_to "Read more", post_path(featured) %>
+    			    </div>
+  			      <div class="option listen pane">
+    			      <%= link_to "Download podcast", featured.download.url %>
+    			    </div>
+    			    <% if featured.tags.any? %>
+    			    <div class="option related pane">
+    			      <%= link_to featured.tags.first.name, post_filter_path(:type => featured.type, :tag => featured.tags.first) %>
+    			    </div>
+    			    <% end %>
+    			    
+  			    <% else %>
+  			    
+  			      <% if featured.url.nil? %>
+  			      <div class="option read pane">
+  			        <%= link_to "Read article", post_path(featured) %>
+  			      </div>
+  			      <% else %>
+  			      <div class="option link pane">
+  			        <%= link_to "Read article", featured.url %>
+  			      </div>
+  			      <% end %>
+  			      
+  			      <div class="option related pane">
+    			      <%= link_to "Related #{featured.type.title.pluralize}", post_filter_path(:type => featured.type) %>
+    			    </div>
+    			    
+  			    <% end %>
+  
+  			  </div>
+  			  
+			  <% elsif featured.class == Event %>
+			  
+			    <div class="splash">
+  			    <h2><span class="type">Event</span><br /><span><%= featured.title %></span><br /><span><%= featured.date.to_s(:article) %></span></h2>
+  			    <% unless featured.image.url.nil? %>
+          		<%=  image_tag featured.image.panel %>
+          	<% end %>
+  			  </div>
+  			  <div class="details">
+  			    <div class="excerpt pane">
+  			      <%= simple_format featured.excerpt %>  			      
+  			    </div>
   			    <div class="option read pane">
-  			      <%= link_to "Read article", post_path(featured) %>
+  			      <%= link_to "Visit site", featured.url %>
+  			    </div>
+  			    <div class="option related pane">
+  			      <%= link_to "More events", events_path %>
   			    </div>
   			  </div>
-			  <% elsif featured.class == Event %>
 			  
 			  <% elsif featured.class == Intrapreneur %>
 			  
 			    <div class="splash">
   			    <h2><span class="type">Profile</span><br /><span><%= featured.name %></span></h2>
-  			    <% unless featured.hero_image.url.nil? %>
-          		<%=  image_tag featured.hero_image.panel %>
-          	<% end %>
+  			    <% if !featured.quote.nil? %>
+  			      <blockquote><%= featured.quote %></blockquote>
+  			    <% else %>
+  			      <% unless featured.hero_image.url.nil? %>
+            		<%=  image_tag featured.hero_image.panel %>
+            	<% end %>
+            <% end %>
   			  </div>
   			  <div class="details">
   			    <div class="excerpt pane">
@@ -37,6 +97,11 @@
   			    <div class="option read pane">
   			      <%= link_to "View profile", person_path(featured) %>
   			    </div>
+  			    <% unless featured.link.nil? %>
+  			    <div class="option link pane">
+  			      <%= link_to "Explore further", featured.link %>
+  			    </div>
+  			    <% end %>
   			  </div>
   			  
 			  <% end %>
@@ -49,7 +114,9 @@
 	
 </section>
 
-<section class="container">
+<section class="container inspiration">
+		
+		<h1>Inspiration</h1>
 		
 		<% if @posts.any? %>
 		<ul class="content_grid">
@@ -58,7 +125,7 @@
 				<%= render :partial => "posts/block", :locals => {:post=>post} %>
 			<% end %>
 		
-			<li class="post_block no_hero">
+			<!--<li class="post_block no_hero">
 				<div class="media">
 					<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
 					<% cache("tweets", :expires_in => 42.minutes) do  %>
@@ -71,7 +138,7 @@
 					<% end %>
 					<% end %>
 				</div>
-			</li>
+			</li>-->
 		
 		</ul>
 		<% else %>

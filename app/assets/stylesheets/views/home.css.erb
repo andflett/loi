@@ -1,19 +1,7 @@
 /* grid */
 
-  .tweets {
-  	list-style-type: none;
-  	padding: 0;
-  }
-
-  .tweets li {
-  	list-style-type: none;
-  	padding: 0;
-  	margin-bottom: 17px;
-  	font-size: 13px;
-  }
-
-  .tweets li:last-child {
-  	margin: 0;
+  .inspiration {
+    padding-bottom: 3px;
   }
   
 /* featured */
@@ -118,72 +106,28 @@
     display: inline-block;
   }
   
-  #featured_content .details {
-    width: 300px;
-    float: right;
-  }
-  
-  #featured_content .details .pane {
-    border-radius: 15px 0 0 15px;
-    background: #ffffff;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-  }
-  
-  #featured_content .details .pane *:last-child {
-    margin-bottom: 0;
-  }
-  
-  #featured_content .details .excerpt {
-    font-family: bentonsansregular;
-    padding-bottom: 10px;
-  }
-  
-  #featured_content .details .excerpt p {
-    font-size: 14px;
-  }
-  
-  #featured_content .details .option {
-    padding: 10px;
-  }
-  
-  #featured_content .details .option a {
-    font-size: 16px;
-    line-height: 42px;
+  #featured_content .splash blockquote:before {
+    content: "";
     display: block;
-    padding-left: 52px;
-    background: no-repeat left center;
+    position: absolute;
+    left: -140px;
+    top: 0px;
+    width: 130px;
+    height: 130px;
+    background: url(<%= asset_path "layout/quotes.png" %>) no-repeat top left;
   }
   
-  #featured_content .details .read a {
-    background-image: url(<%= asset_path "icons/view.png" %>);
-    font-family: bentonsansmedium;
-    text-transform: uppercase;
+  #featured_content .splash blockquote {
+    position: absolute;
+    top: 115px;
+    left: 190px;
+    z-index: 7;
+    width: 500px;
+    background: repeat top left url(<%= asset_path "layout/text_bg.png" %>);
+    font-size: 36px;
+    line-height: 40px;
+    display: inline-block;
+    font-family: bentonsansregular;
+    color: #E40F4F;
+    padding: 0 10px;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

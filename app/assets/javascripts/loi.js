@@ -33,6 +33,33 @@ $(document).ready(function(){
 	
 	// Homepage banners
 	$('.banners').easyPaginate({step:1})
+	
+	// Link blocks
+	$('.person_block, .post_block').each(function(i,el){
+	  
+	  $(el).find('.media p').hide();
+	  
+	  $(el).bind('mouseenter',function(e){
+	    $(this).addClass('active');
+	    $(el).find('.media p').show();
+	  });
+	  
+	  $(el).bind('mouseleave',function(e){
+	    $(this).removeClass('active');
+	    $(el).find('.media p').hide();
+	  })
+	  
+	  $(el).bind('click',function(ev){
+	    ev.preventDefault();
+	    ev.stopPropagation();
+	    if($(this).find('.media h2 a:external').length>0) {
+	      window.open($(this).find('.media h2 a').attr('href'))
+	    } else {
+	      window.location = $(this).find('.media h2 a').attr('href');
+	    }
+	  })
+	  
+	});
 		
 });
 

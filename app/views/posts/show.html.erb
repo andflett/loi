@@ -1,6 +1,9 @@
 <section id="primary_content" class="container">
-	<article class="post panel">
-		<h1><%= @post.title %></h1>
+
+	<article class="post" id="schemantics">
+	  
+	  <h1><%= @post.title %></h1>
+    
 		<time>Shared <%= @post.created_at.to_formatted_s(:article) %> in <em><%= @post.tags.join(', ') %></em></time>
 		<% if @post.body.is_json? %>
 		<%= render_sir_trevor(@post.body) %>
@@ -8,4 +11,34 @@
 		<%= sir_trevor_markdown(@post.body).html_safe %>
 		<% end %>
 	</article>
+	
+	<aside class="details">
+	  <% if @post.type.title == "Video" %>
+	    <div class="option related pane">
+	      <%= link_to "Browse other videos", post_filter_path(:type => @post.type) %>
+	    </div>
+	  <% elsif @post.type.title == "Podcast" %> 
+      <div class="option listen pane">
+	      <%= link_to "Download podcast", @post.download.url %>
+	    </div>
+	    <% if @post.tags.any? %>
+  	    <div class="option related pane">
+  	      <%= link_to @post.tags.first.name, post_filter_path(:type => @post.type, :tag => @post.tags.first) %>
+  	    </div>
+  	  <% end %>
+	  <% else %>
+		    
+		  <% unless @post.url.nil? %>
+      <div class="option link pane">
+        <%= link_to "Read article", @post.url %>
+      </div>
+      <% end %>
+      
+      <div class="option related pane">
+	      <%= link_to "Related #{@post.type.title.pluralize}", post_filter_path(:type => @post.type) %>
+	    </div>
+			    
+		<% end %>
+	</aside>
+	
 </section>

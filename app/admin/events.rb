@@ -35,13 +35,21 @@ ActiveAdmin.register Event do
 
 	form do |f|
 		
-    f.inputs "Event" do
-			f.input :featured, :label => "Featured on homepage?"
+    f.inputs "Event" do		
       f.input :title
+      f.input :image
 			f.input :date
 			f.input :url, :label => "Link"
       f.input :body, :label => "Description", :input_html => { :rows => 5 }
-			if f.object.new_record? || f.object.user.nil?
+    end
+    
+    f.inputs "Homepage" do
+      f.input :featured, :label => "Featured on homepage?"
+			f.input :excerpt, :input_html => { :rows => 3 }, :label => "Short description"
+    end
+    
+    f.inputs "Published by" do
+      if f.object.new_record? || f.object.user.nil?
 		    f.input :user_id, :as => :hidden, :value => current_user.id
 			end
     end

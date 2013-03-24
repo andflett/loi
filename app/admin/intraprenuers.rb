@@ -5,6 +5,8 @@ ActiveAdmin.register Intrapreneur do
     authorize_resource
   end
 
+  menu :priority => 2, :if => proc{ can?(:manage, Intrapreneur) }
+
   filter :name
   
   index do

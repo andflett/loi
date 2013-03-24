@@ -6,11 +6,10 @@ Event.delete_all
 Resource.delete_all
 
 Type.create([
-	{ title: 'Link' },
   { title: 'Article' },
   { title: 'Podcast' },
   { title: 'Video' },
-  { title: 'Quote' }
+  { title: 'Link' }
 ])
 
 Resource.create([

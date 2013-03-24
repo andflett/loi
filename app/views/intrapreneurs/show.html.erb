@@ -1,0 +1,24 @@
+<section id="primary_content" class="container">
+	
+	<article class="post" id="schemantics">
+	  
+	  <h1><%= @intrapreneur.name %></h1>
+    
+		<% if @intrapreneur.body.is_json? %>
+		<%= render_sir_trevor(@intrapreneur.body) %>
+		<% else %>
+		<%= sir_trevor_markdown(@intrapreneur.body).html_safe %>
+		<% end %>
+	</article>
+	
+	<aside class="details">
+	  
+	  <% unless @intrapreneur.link.nil? %>
+    <div class="option link pane">
+      <%= link_to "Explore further", @intrapreneur.link %>
+    </div>
+    <% end %>
+	  
+	</aside>
+	
+</section>

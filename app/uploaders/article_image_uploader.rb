@@ -9,7 +9,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumbnail do
-    process :resize_to_fill => [231,150]
+    process :resize_to_fill => [317,220]
   end
   
   version :panel do 

@@ -1,8 +1,28 @@
-<section id="primary_content" class="container">
-	<h1>Inspiration</h1>
+<section id="primary_content" class="container inspiration">
 	
 	<div id="schemantics">
 		
+		<div class="filter_blocks">
+		
+	  	<% if @types.any? %>
+  		<nav id="type_navigation">
+  			<ul class="filters">
+  				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All post types", post_filter_path(params[:tag], nil) %></li>
+  				<% @types.each do |type| %>
+  					<li <%= 'class=active' if params[:type] == type.slug %>><%= link_to type.title.pluralize, post_filter_path(params[:tag], type.slug) %></li>
+  				<% end %>
+  				<% if @tags.any? %>
+  				<li <%= 'class=active' if params[:tag].nil? %>><%= link_to "All tags", post_filter_path(nil, params[:type]) %></li>
+  				<% @tags.each do |tag| %>
+  					<li <%= 'class=active' if params[:tag] == tag.slug %>><%= link_to tag.name, post_filter_path(tag.slug, params[:type]) %></li>
+  				<% end %>
+  				<% end %>
+  			</ul>
+  		</nav>
+      <% end %>
+      
+		</div>
+	
 		<% if @posts.any? %>
 		<ul class="content_grid">
 			<% @posts.each do |post| %>
@@ -14,32 +34,6 @@
 		<% end %>
 		
 	</div>
-	
-	<aside class="panel">
-		
-		<% if @types.any? %>
-		<nav id="type_navigation">
-			<ul class="filters">
-				<li <%= 'class=active' if params[:type].nil? %>><%= link_to "All inspiration", post_filter_path(params[:tag], nil) %></li>
-				<% @types.each do |type| %>
-					<li <%= 'class=active' if params[:type] == type.slug %>><%= link_to type.title.pluralize, post_filter_path(params[:tag], type.slug) %></li>
-				<% end %>
-			</ul>
-		</nav>
-    <% end %>
-	
-		<% if @tags.any? %>
-		<nav id="type_navigation">
-			<ul class="filters">
-				<li <%= 'class=active' if params[:tag].nil? %>><%= link_to "All tags", post_filter_path(nil, params[:type]) %></li>
-				<% @tags.each do |tag| %>
-					<li <%= 'class=active' if params[:tag] == tag.slug %>><%= link_to tag.name, post_filter_path(tag.slug, params[:type]) %></li>
-				<% end %>
-			</ul>
-		</nav>
-		<% end %>
-		
-	</aside>
 
 </section>
 

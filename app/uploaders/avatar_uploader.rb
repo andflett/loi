@@ -13,7 +13,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
   
   version :thumbnail do
-    process :resize_to_fit => [300,nil]
+    process :resize_to_fill => [317,220]
   end
 
   def extension_white_list

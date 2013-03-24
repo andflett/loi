@@ -1,7 +1,15 @@
-<li class="post_block <%= "no_hero" if post.hero_image.url.nil? %>">
+<li class="person_block <%= "no_hero" if post.hero_image.url.nil? %>">
 	<div class="media">
-		<h2><%= link_to post.title, post_path(post) %></h2>
+	  
+	  <% if post.url.nil? %>
+		  <h2><%= link_to post.title, post_path(post) %></h2>
+		<% else %>
+		  <h2><%= link_to post.title, post.url %></h2>
+		<% end %>
+		
+		<br />
 		<%= simple_format truncate(post.excerpt, :length => 180) %>
+		
 	</div>
 	<% unless post.hero_image.url.nil? %>
 		<%=  image_tag post.hero_image.thumbnail %>

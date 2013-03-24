@@ -1,6 +1,4 @@
-<section id="primary_content" class="container">
-  
-  <h1>People</h1>
+<section id="primary_content" class="container inspiration">
   
   <div id="schemantics">
 
@@ -8,7 +6,19 @@
   	<ul class="content_grid">
 		
   		<% @intrapreneurs.each do |intrapreneur| %>
-  		  <%= intrapreneur.name %>
+  		  
+  		  <li class="person_block">
+  		  
+  		    <div class="media">
+  		      <h2><%= link_to intrapreneur.name, person_path(intrapreneur) %></h2><br />
+  		      <%= simple_format intrapreneur.job_title %>
+  		    </div> 
+  			  <% unless intrapreneur.hero_image.url.nil? %>
+            <%=  image_tag intrapreneur.hero_image.thumbnail %>
+          <% end %>
+  			  
+			  </li>
+  		
   		<% end %>
 		
   	</ul>
