@@ -34,7 +34,6 @@ ActiveAdmin.register Resource do
 	form do |f|
 		
     f.inputs "Resource" do   
-			f.input :featured, :label => "Featured on homepage?"
       f.input :title
       f.input :image
 			f.input :url, :label => "Link"

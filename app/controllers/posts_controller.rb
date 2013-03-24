@@ -14,17 +14,18 @@ class PostsController < ApplicationController
 	
 	def filtered
 		
-		@posts = Post.published
+		@posts = Post.where(:published => false)
 		
 		if params[:type]
 			@type = Type.find(params[:type])
+			p @type.inspect
 			@posts = @posts.joins(:type).where('type_id = ?', @type.id)
 		end
 		
-		if params[:tag]
-			@tag = ActsAsTaggableOn::Tag.find(params[:tag])
-			@posts = @posts.tagged_with(@tag.name)
-		end
+		#if params[:tag]
+		#	@tag = ActsAsTaggableOn::Tag.find(params[:tag])
+	#		@posts = @posts.tagged_with(@tag.name)
+#		end
 		
 		render :index
 	end

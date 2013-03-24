@@ -4,11 +4,16 @@
 	  
 	  <h1><%= @intrapreneur.name %></h1>
     
+    <% unless @intrapreneur.hero_image.url.nil? %>
+      <%=  image_tag @intrapreneur.hero_image.panel %>
+    <% end %>
+    
 		<% if @intrapreneur.body.is_json? %>
 		<%= render_sir_trevor(@intrapreneur.body) %>
 		<% else %>
 		<%= sir_trevor_markdown(@intrapreneur.body).html_safe %>
 		<% end %>
+		
 	</article>
 	
 	<aside class="details">
@@ -18,6 +23,10 @@
       <%= link_to "Explore further", @intrapreneur.link %>
     </div>
     <% end %>
+	  
+	  <div class="option related pane">
+      <%= link_to "More people", people_path %>
+    </div>
 	  
 	</aside>
 	
