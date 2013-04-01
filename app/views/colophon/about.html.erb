@@ -5,15 +5,32 @@
 	
 	<div id="schemantics" class="panel">
 		
-		<p>Do you work for big business? Are you responsible for launching a new initiative, product or service that is a force for good in the world? Would your colleagues describe you as a bit of a maverick, conspirator or disruptor? </p>
+		<p>Do you work for big business? Are you responsible for launching a new initiative, product or service that is a force for good in the world? Would your colleagues describe you as a bit of a maverick, maven or misfit?</p>
 		<p><em>If so, you may be a social intrapreneur!</em></p>
 		<p>Social intrapreneurs are becoming key actors in the race towards a new kind of economy. These corporate changemakers are developing scalable solutions to some of the world’s most intractable problems ranging from health to education to environment. But contrary to social entrepreneurs, they are innovating from within some of the world’s largest companies.</p>
 		<p>Delivering game-changing innovation inside a company is never easy, but it’s even more challenging when the problems you’re tackling – such as climate change or poverty &ndash; are not always well understood or overtly connected to the business strategy.</p>
 		<p>That's why we established the League of Intrapreneurs &ndash; to help support and strengthen this growing movement of corporate change agents transforming business from the inside out.</p>
 		<p>Will you <%= link_to "join us?", join_path %></p>
+		<p class="footnote">&mdash; Alexa, Gib, Rosario and Maggie</p>
 	</div>
 	
 	<aside>
+	  
+	  <% if @people.any? %>
+	  <h2>Our Founders &amp; Advisors</h2>
+    <ul class="face_grid">
+      <% @people.each do |intrapreneur| %>
+        <li>
+          <%= link_to intrapreneur.name, person_path(intrapreneur), :class => "face_link" %>
+  			  <% unless intrapreneur.hero_image.url.nil? %>
+            <%= link_to (image_tag intrapreneur.hero_image.thumbnail), person_path(intrapreneur), :alt => intrapreneur.name %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  	<% end %>
+	  
+	  <h2>Our Partners</h2>
 				
   	<ul class="logo_grid">
   		<li><a href="http://www.iic.org/"><%= image_tag "branding/idb.gif", :alt => "IDB" %></a></li>

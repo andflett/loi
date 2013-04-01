@@ -304,5 +304,53 @@
   .details .listen a {
     background-image: url(<%= asset_path "icons/listen.png" %>);
   }
-	
+  
+/* =face-grid */
+
+  .face_grid {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 15px 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .face_grid li {
+    float: left; 
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 142px;
+    height: 99px;
+    position: relative;
+    padding: 0;
+  }
+  
+  .face_grid li .face_link {
+    color: #ffffff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    background: #E40F4F;
+    z-index: 7;
+    padding: 3px 7px;
+    display: none;
+  }
+  
+  .face_grid li:hover .face_link {
+    display: block;
+  }
+  
+  .face_grid li:nth-child(2n+2) {
+    margin-right: 0;
+  }
+  
+  .face_grid li img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+	}
 

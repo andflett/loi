@@ -20,6 +20,8 @@ ActiveAdmin.register Intrapreneur do
 		
 		f.inputs "Features" do
 				f.input :featured, :label => "Featured on homepage?"
+				f.input :founder
+				f.input :advisor
 		end
 		
 		if f.object.new_record? || f.object.user.nil?
