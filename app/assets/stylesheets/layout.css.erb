@@ -11,15 +11,16 @@
 @media all {
 	
 	body {
-		background:  url(<%= asset_path "layout/background.jpg" %>) repeat top left;
+		background: url(<%= asset_path "layout/background.jpg" %>) repeat top left;
 	}
 	
 	.container {
 		width: 1006px;
-		margin: 0 auto 25px;
+		margin: 0 auto 30px;
 		padding: 30px;
 		background: #aed7d4;
 		overflow: hidden;
+		box-shadow: 0 0 10px rgba(1,1,1,0.3);
 	}
 	
 	.container.modules {
@@ -228,7 +229,8 @@
 			display: inline-block;
 			font-size: 17px;
 			padding: 0px;
-			font-family: Georgia;	
+			font-family: Georgia;
+			font-style: italic;
 		}
 		
 		header #primary_navigation ul li a {
