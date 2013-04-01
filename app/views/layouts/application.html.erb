@@ -34,9 +34,7 @@
 
 		</script>
 		<% end %>
-		
-		<!--<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>-->
-		
+				
 	</head>
 	<body class="<%= "section_#{params[:controller].parameterize.underscore} view_#{params[:action]}"%> <%= "bg" if params[:bg] %>">
 
@@ -48,7 +46,7 @@
 				
 				<ul class="icon_list">
 					<li class="twitter"><%= link_to "Twitter", "https://twitter.com/SocIntLeague" %></li>
-					<li class="linkedin"><%= link_to "LinkedIn", "http://www.linkedin.com/groups/League-Intrapreneurs-4746722" %></li>
+					<li class="facebook"><%= link_to "Facebook", "http://www.facebook.com/leagueofintrapreneurs" %></li>
 				</ul>
 				
 				<p class="cta"><%= link_to "Join the league", join_path %></p>
@@ -72,10 +70,6 @@
 		<div id="main" role="main">
 			<%= yield %>
 		</div>
-	
-		<footer class="container">
-			<p id="colophon">Copyright &copy; Imaginals 2013, view our <%= link_to "privacy policy", privacy_path %></p>
-		</footer>
 
 	</body>
 </html>
