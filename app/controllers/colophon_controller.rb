@@ -1,7 +1,7 @@
 class ColophonController < ApplicationController
 	
 	def about
-	  @people = Intrapreneur.founders_and_advisors
+	  @people = Intrapreneur.where(:founder => true) + Intrapreneur.where(:advisor => true)
 	end
 	
 	def join

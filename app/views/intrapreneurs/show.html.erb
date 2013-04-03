@@ -8,6 +8,10 @@
       <%=  image_tag @intrapreneur.hero_image.panel %>
     <% end %>
     
+    <% if  @intrapreneur.job_title %>
+    <p class="footnote"><%= @intrapreneur.job_title %></p>
+    <% end %>
+    
 		<% if @intrapreneur.body.is_json? %>
 		<%= render_sir_trevor(@intrapreneur.body) %>
 		<% else %>
@@ -18,7 +22,7 @@
 	
 	<aside class="details">
 	  
-	  <% unless @intrapreneur.link.nil? %>
+	  <% unless @intrapreneur.link.blank? %>
     <div class="option link pane">
       <%= link_to "Explore further", @intrapreneur.link %>
     </div>

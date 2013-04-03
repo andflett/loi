@@ -1,7 +1,6 @@
 class Intrapreneur < ActiveRecord::Base
 
 	scope :features, where(:featured => true)
-  scope :founders_and_advisors, where('founder = true or advisor = true')
   
   attr_accessible :name, :link, :job_title, :quote, :body,
 									:hero_image, :user_id, :slug, :featured,

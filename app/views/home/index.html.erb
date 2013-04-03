@@ -8,7 +8,7 @@
 			  <% if featured.class == Post %>
 			  
 			    <div class="splash">
-  			    <h2><span class="type"><%= featured.type.title %></span><br /><span><%= featured.title %></span></h2>
+  			    <h2><span class="type"><%= (featured.type.title == "Link") ? "Article" : featured.type.title %></span><br /><span><%= featured.title %></span></h2>
   			    <% unless featured.hero_image.url.nil? %>
           		<%=  image_tag featured.hero_image.panel %>
           	<% end %>
