@@ -17,6 +17,11 @@
 	    <div class="option related pane">
 	      <%= link_to "Browse other videos", post_filter_path(:type => @post.type) %>
 	    </div>
+	    <% unless @post.url.blank? %>
+      <div class="option link pane">
+        <%= link_to "Learn more", @post.url %>
+      </div>
+      <% end %>
 	  <% elsif @post.type.title == "Podcast" %> 
       <div class="option listen pane">
 	      <%= link_to "Download podcast", @post.download.url %>
@@ -26,9 +31,14 @@
   	      <%= link_to @post.tags.first.name, post_filter_path(:type => @post.type, :tag => @post.tags.first) %>
   	    </div>
   	  <% end %>
+  	  <% unless @post.url.blank? %>
+      <div class="option link pane">
+        <%= link_to "Learn more", @post.url %>
+      </div>
+      <% end %>
 	  <% else %>
 		    
-		  <% unless @post.url.nil? %>
+		  <% unless @post.url.blank? %>
       <div class="option link pane">
         <%= link_to "Read article", @post.url %>
       </div>

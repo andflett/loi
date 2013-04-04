@@ -1,10 +1,10 @@
 <li class="person_block <%= "no_hero" if post.hero_image.url.nil? %>">
 	<div class="media">
-	  
-	  <% if post.url.empty? %>
-		  <h2><%= link_to post.title, post_path(post) %></h2>
+	 
+	  <% if !post.url.empty? && (post.type.title == "Link" || post.type.title == "Article") %>
+	    <h2><%= link_to post.title, post.url %></h2>		  
 		<% else %>
-		  <h2><%= link_to post.title, post.url %></h2>
+		  <h2><%= link_to post.title, post_path(post) %></h2>
 		<% end %>
 		
 		<br />
