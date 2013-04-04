@@ -38,7 +38,10 @@ ActiveAdmin.register Resource do
       f.input :image
 			f.input :url, :label => "Link"
       f.input :body, :label => "Description", :input_html => { :rows => 5 }
-			if f.object.new_record? || f.object.user.nil?
+    end
+    
+    f.inputs "User" do
+      if f.object.new_record? || f.object.user.nil?
 		    f.input :user_id, :as => :hidden, :value => current_user.id
 			end
     end
