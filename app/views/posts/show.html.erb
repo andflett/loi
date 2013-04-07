@@ -22,9 +22,13 @@
         <%= link_to "Learn more", @post.url %>
       </div>
       <% end %>
-	  <% elsif @post.type.title == "Podcast" %> 
+	  <% elsif @post.type.title == "Podcast" %>
       <div class="option listen pane">
-	      <%= link_to "Download podcast", @post.download.url %>
+        <% if @post.download.url.blank? %>
+          <%= link_to "Podcast coming soon!", "#" %>
+        <% else %>
+	        <%= link_to "Download podcast", @post.download.url %>
+	      <% end %>
 	    </div>
 	    <% if @post.tags.any? %>
   	    <div class="option related pane">
