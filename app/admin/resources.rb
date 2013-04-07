@@ -33,7 +33,8 @@ ActiveAdmin.register Resource do
 
 	form do |f|
 		
-    f.inputs "Resource" do   
+    f.inputs "Resource" do  
+      f.input :featured 
       f.input :title
       f.input :image
 			f.input :url, :label => "Link"

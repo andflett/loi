@@ -8,7 +8,8 @@
 			  <% if featured.class == Post %>
 			  
 			    <div class="splash">
-  			    <h2><span class="type"><%= (featured.type.title == "Link") ? "Article" : featured.type.title %></span><br /><span><%= featured.title %></span></h2>
+  			    <h2><span class="type"><%= (featured.type.title == "Link") ? "Article" : featured.type.title %></span><br />
+  			      <span><%= link_to featured.title, post_path(featured) %></span></h2>
   			    <% unless featured.hero_image.url.nil? %>
           		<%=  image_tag featured.hero_image.panel %>
           	<% end %>
@@ -78,10 +79,27 @@
   			    </div>
   			  </div>
 			  
+			  <% elsif featured.class == Resource %>
+
+			    <div class="splash">
+  			    <h2><span class="type">Resources</span><br /><span><%= link_to featured.title, featured.url %></span></h2>
+  			    <% unless featured.image.url.nil? %>
+          		<%=  image_tag featured.image.panel %>
+          	<% end %>
+  			  </div>
+  			  <div class="details">
+  			    <div class="excerpt pane">
+  			      <%= simple_format featured.body %>  			      
+  			    </div>
+  			    <div class="option read pane">
+  			      <%= link_to "View", featured.url %>
+  			    </div>
+  			  </div>
+			  
 			  <% elsif featured.class == Intrapreneur %>
 			  
 			    <div class="splash">
-  			    <h2><span class="type">Profile</span><br /><span><%= featured.name %></span></h2>
+  			    <h2><span class="type">Profile</span><br /><span><%= link_to featured.name, person_path(featured) %></span></h2>
   			    <% if !featured.quote.nil? %>
   			      <blockquote><%= featured.quote %></blockquote>
   			    <% else %>
