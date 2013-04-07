@@ -23,7 +23,7 @@
         <li>
           <%= link_to intrapreneur.name, person_path(intrapreneur), :class => "face_link" %>
   			  <% unless intrapreneur.hero_image.url.nil? %>
-            <%= link_to (image_tag intrapreneur.hero_image.thumbnail), person_path(intrapreneur), :alt => intrapreneur.name %>
+            <%= link_to (image_tag intrapreneur.hero_image.thumbnail, :alt => intrapreneur.name), person_path(intrapreneur) %>
           <% end %>
         </li>
       <% end %>
