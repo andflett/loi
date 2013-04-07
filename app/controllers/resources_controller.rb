@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
 	def index
-	  @resources = Resource.all
+	  @resources = Resource.order("created_at DESC")
   end
 
 end
