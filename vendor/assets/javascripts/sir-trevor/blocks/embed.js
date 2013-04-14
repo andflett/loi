@@ -7,7 +7,7 @@ SirTrevor.Blocks.Embed = SirTrevor.Block.extend({
   title: "Embed",             
   className: "embed",  
   limit: 0,
-  toolbarEnabled: true,         
+  toolbarEnabled: true,
   dropEnabled: false,
   formattingEnabled: false,
 

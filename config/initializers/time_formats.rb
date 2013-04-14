@@ -1,1 +1,2 @@
 Time::DATE_FORMATS[:article] = lambda { |time| time.strftime( "%A the #{time.day.ordinalize} of %B %Y") }
+Time::DATE_FORMATS[:event] = lambda { |time| time.strftime( "<span>%B</span> %A #{time.day.ordinalize}").html_safe }

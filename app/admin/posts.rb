@@ -7,10 +7,11 @@ ActiveAdmin.register Post do
   
   menu :priority => 1, :if => proc{ can?(:manage, Post) }
     
-  filter :title
+  config.filters = false
   
 	index do
     column("Title") { |post| link_to post.title, admin_post_path(post) }
+    column("Type") { |post| post.type.title unless post.type.blank? }
     column("Author") { |post| post.user.name unless post.user.nil? }
     column "" do |post|
       "#{link_to "Edit", edit_admin_post_path(post)} &nbsp; #{link_to "Delete", admin_post_path(post), :method => "delete", :confirm => "Are you sure you wish to delete this post?"}".html_safe
@@ -19,30 +20,33 @@ ActiveAdmin.register Post do
   
   form :html => { :enctype => "multipart/form-data" }  do |f|
 		
+		f.inputs "Features" do
+	    f.input :featured, :label => "Feature as a homepage banner?"
+    end
+		
 		f.inputs "Type of post" do
-				f.input :type
-				f.input :featured, :label => "Featured on homepage?"
-				f.input :url
-				f.input :download
+				f.input :type	
 		end
 		
-		f.inputs "Tags", :class => "autocomplete inputs" do
-			f.autocomplete_field :tag_list, autocomplete_tag_name_posts_path, :"data-delimiter" => ', '
-		end
-		
-		unless f.object.new_record?
-			f.inputs "Dates" do
-				f.input :created_at, :label => "Published at" 
-			end
+		f.inputs "Podcast", :id => "podcast_fields" do
+			f.input :download, :label => "File", :hint => "Upload your podcast in format mp3, ogg, wav or mp4"
 		end
 		
     f.inputs "Post" do   
-      f.input :hero_image, :label => "Thumbnail"
-      f.input :title
+      f.input :title			
       f.input :excerpt, :input_html => { :rows => 3 }
+      f.input :hero_image, :label => ((f.object.new_record?) ? "Image" : "New Image"), :hint => "Image must be at least 317px by 220px, if featured on homepage it must be at least 750px wide"
     end
+    
+    f.inputs "Tags", :class => "autocomplete inputs" do
+			f.autocomplete_field :tag_list, autocomplete_tag_name_posts_path, :"data-delimiter" => ', '
+		end
+    
+    f.inputs "External article" do
+		  f.input :url, :label => "Link"
+		end
 
-    f.inputs "Body" do
+    f.inputs "... or write your article below" do
       if post.new_record? || post.body.is_json?
         f.sir_trevor_text_area :body
       else 
@@ -50,12 +54,7 @@ ActiveAdmin.register Post do
       end
     end
     
-    if f.object.new_record? || f.object.user.nil?
-      f.inputs "Author" do
-    	  f.input :user_id, :as => :hidden, :value => current_user.id
-    	  current_user.name
-    	end
-		end
+    f.input :user_id, :as => :hidden, :value => current_user.id if f.object.new_record? || f.object.user.nil?
 		
     f.buttons
   end

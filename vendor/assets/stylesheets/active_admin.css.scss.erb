@@ -10,6 +10,7 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import "jquery.ui.all";
 @import "sir-trevor";
 @import "sir-trevor-custom";
 
@@ -151,10 +152,32 @@ body.active_admin form fieldset ol > li.hidden {
 	padding: 0;
 }
 
-body.active_admin form fieldset.autocomplete ol {
-  padding: 20px;
+body.active_admin li.hidden {
+  display: none;
+}
+
+body.active_admin form input[type=text], body.active_admin form input[type=password], body.active_admin form input[type=email], body.active_admin form input[type=number], body.active_admin form input[type=url], body.active_admin form input[type=tel], body.active_admin form textarea {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+body.active_admin .autocomplete ol {
+  padding: 10px 0 10px 230px;
 }
 
 body.active_admin form fieldset.autocomplete ol input {
-  width: 400px;
+  width: 500px;
 }
+
+body.active_admin .ui-autocomplete.ui-menu {
+  border-radius: 3px;
+  border: 1px solid #999;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+body.active_admin .ui-autocomplete.ui-menu li {
+  padding-left: 0;
+}
+
+

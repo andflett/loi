@@ -12,13 +12,11 @@ class Post < ActiveRecord::Base
 
 	acts_as_taggable_on :tags
 
-	validates_presence_of :title, :excerpt, :body, :type_id
+	validates_presence_of :title, :excerpt, :body, :type
 	
 	mount_uploader :hero_image, ::ArticleImageUploader
 	mount_uploader :download, ::PodcastUploader
-	
-	paginates_per 10
-	
+		
 	extend FriendlyId
   friendly_id :title, use: :history
 

@@ -3,9 +3,7 @@
 	<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "primary_panel" }) do |f| %>
 	  	
 		<h1>Request a new password</h1>
-		
-		<%= render "shared/notices" %>
-		
+				
 		<fieldset>
 	    	<%= f.input :email,  :input_html => { :autocomplete => "off" }, :required => true, :label => "Your email address, please", :wrapper_html => { :class => "smart_label" } %>
 		</fieldset>

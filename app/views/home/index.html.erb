@@ -143,20 +143,18 @@
 				<%= render :partial => "posts/block", :locals => {:post=>post} %>
 			<% end %>
 		
-			<!--<li class="post_block no_hero">
-				<div class="media">
-					<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
-					<% cache("tweets", :expires_in => 42.minutes) do  %>
-					<% begin %>
-						<% Twitter.user_timeline("SocIntLeague").first(1).each do |tweet| %>
-					    	<p><%= auto_link(tweet.text).html_safe %></p>
-						<% end %>
-					<% rescue %>
-						<p>Whoops, looks like we can't reach Twitter right now.</p>
+			<li class="text_block">
+				<h2><%= link_to "Follow @SocIntLeague", "http://twitter.com/SocIntLeague" %></h2>
+				<% cache("tweets", :expires_in => 42.minutes) do  %>
+				<% begin %>
+					<% Twitter.user_timeline("SocIntLeague").first(1).each do |tweet| %>
+				    	<p><%= auto_link(tweet.text).html_safe %></p>
 					<% end %>
-					<% end %>
-				</div>
-			</li>-->
+				<% rescue %>
+					<p>Whoops, looks like we can't reach Twitter right now.</p>
+				<% end %>
+				<% end %>
+			</li>
 		
 		</ul>
 		<% else %>

@@ -5,8 +5,7 @@ ActiveAdmin.register Resource do
     authorize_resource
   end
 
-	filter :title
-	filter :url
+	config.filters = false
   
   menu :if => proc{ can?(:manage, Resource) }
   
@@ -20,10 +19,16 @@ ActiveAdmin.register Resource do
 	show  do |resource|
     panel 'resource' do
       attributes_table_for resource do
+        row "Homepage Banner?" do
+           (resource.featured) ? "Yes" : "No" 
+        end
         row :title
 				row "Link" do
 					resource.url
 				end
+				row :image do
+          image_tag(resource.image.thumbnail) unless resource.image.url.nil?
+        end
         row "Description" do
 					simple_format resource.body
 				end
@@ -33,19 +38,18 @@ ActiveAdmin.register Resource do
 
 	form do |f|
 		
-    f.inputs "Resource" do  
-      f.input :featured 
+		f.inputs "Features" do
+	    f.input :featured, :label => "Feature as a homepage banner?"
+    end
+		
+    f.inputs "Resource" do
       f.input :title
-      f.input :image
 			f.input :url, :label => "Link"
-      f.input :body, :label => "Description", :input_html => { :rows => 5 }
+			f.input :image, :label => ("New Image" unless f.object.new_record?), :hint => "Image must be at least 231px by 150px, if featured on homepage it must be at least 750px wide"
+      f.input :body, :label => "Description", :input_html => { :rows => 6 }
     end
-    
-    f.inputs "User" do
-      if f.object.new_record? || f.object.user.nil?
-		    f.input :user_id, :as => :hidden, :value => current_user.id
-			end
-    end
+  
+    f.input :user_id, :as => :hidden, :value => current_user.id if f.object.new_record? || f.object.user.nil?
 		
     f.buttons
   end
