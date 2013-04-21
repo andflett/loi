@@ -39,7 +39,7 @@ $(document).ready(function(){
 		// Post types
 		$('#podcast_fields').hide();
 		$('#post_type_id').bind('change',function(ev){
-		  if($(this).val()==20) {
+		  if($(this).val()==6) {
 		    $('#podcast_fields').show();
 		  } else {
 		    $('#podcast_fields').hide();   
