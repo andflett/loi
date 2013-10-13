@@ -1,7 +1,7 @@
 <%= simple_form_for [commentable, comment], :html => { :class => "primary_panel form_panel", :remote => ((comment.new_record?) ? true : false)  } do |f| %>
 	
 	<%= field_set_tag do %>
-		<%= f.input :body, :label => "Comment", :input_html => { :rows => 10 } %>
+		<%= f.input :body, :label => false, :input_html => { :rows => 3 } %>
 	<% end %>
 
 	<%= field_set_tag nil, :class => "actions" do %>
