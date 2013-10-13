@@ -1,0 +1,12 @@
+<div class="toolkit-block toolkit-<%= toolkit.priority %>"> 
+  <ul class="toolkit-block-options">
+    <li class="toolkit-option option-view-white"><%= link_to "View", toolkit_path(toolkit), :title => "Read" %></li>
+    <li class="toolkit-option option-download-white"><%= link_to "Download", toolkit.download.url, :title => "Download" %></li>
+    <li class="toolkit-option option-share-white"><%= link_to "Share", share_toolkit_path(toolkit), :remote => true, :title => "Share" %></li>
+  </ul>
+  <div class="toolkit-block-content">
+	  <h2><%= link_to toolkit.title, toolkit_path(toolkit) %></h2>
+	  <h3><%= toolkit.subtitle %></h3>
+	  <p><%= toolkit.description %></p>
+	</div>
+</div>

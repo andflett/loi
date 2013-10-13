@@ -1,0 +1,10 @@
+<div class="meta">
+	
+	<div class="author">
+		<h3><span><%= commentable.commentable_label %> from</span> <%= comment.user.name %></h3>
+	</div>
+
+</div>
+
+<%= simple_format auto_link(comment.body) %>
+

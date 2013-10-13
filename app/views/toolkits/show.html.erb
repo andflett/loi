@@ -1,0 +1,22 @@
+<section id="primary_content" class="container">
+
+	<div class="toolkit-header">
+    <h1><%= link_to "Cubicle Warriors <span>Toolkit</span>".html_safe, toolkits_path %></h1>
+    <p><span class="toolkit-priority"><%= @toolkit.priority %></span> <%= @toolkit.title %></p>
+  </div>
+  
+  <div class="toolkit">
+  
+    <ul class="toolkit-options">
+      <li class="toolkit-option option-share"><%= link_to "Share", share_toolkit_path(@toolkit), :remote => true %></li>
+      <li class="toolkit-option option-download"><%= link_to "Download", @toolkit.download.url %></li>
+      <li class="toolkit-option option-comment"><%= link_to "Comment", comment_toolkit_path(@toolkit), :remote => true %></li>      
+    </ul>
+  
+    <div class="toolkit-content">
+      <%= render "toolkits/slides/toolkit_#{@toolkit.priority}" %>
+    </div>
+    
+  </div>
+	  	
+</section>

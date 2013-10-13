@@ -34,6 +34,9 @@ $(document).ready(function(){
 	// Homepage banners
 	$('.banners').easyPaginate({step:1})
 	
+	// Homepage banners
+	$('.toolkit-slides').easyPaginate({step:1, numeric: false})
+	
 	// Link blocks
 	$('.person_block, .post_block').each(function(i,el){
 	  
@@ -60,6 +63,25 @@ $(document).ready(function(){
 	  })
 	  
 	});
+	
+	// Toolkit link blocks 
+	$('.toolkit-block').each(function(i,el){
+	  
+	  $(el).bind('mouseenter',function(e){
+	    $(this).addClass('active');
+	  });
+	  
+	  $(el).bind('mouseleave',function(e){
+	    $(this).removeClass('active');
+	  })
+	  
+	  $(el).bind('click',function(ev){
+	    ev.preventDefault();
+	    ev.stopPropagation();
+	    window.location = $(this).find('.option-view-white a').attr('href');
+	  })
+	  
+	})
 		
 });
 

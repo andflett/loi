@@ -83,3 +83,36 @@ Event.create([
 		date: Date.new(2013,11,6)
 	}
 ])
+
+Toolkit.create([
+	{
+	  priority: 1,
+		title: "Making the Business Case",
+		subtitle: "How to combine the rational and emotional to win over your decision makers.",
+		description: "Don’t raise your voice, improve your argument."
+	},
+	{
+	  priority: 2,
+		title: "Negotiating the System",
+		subtitle: "How to navigate the intense politics and personalities of the corporate ecosystem.",
+		description: "Attempt to re-express your target’s position so clearly, vividly and fairly that your target says, ‘Thanks I wish I’d thought of putting it that way’."
+	},
+	{
+	  priority: 3,
+		title: "Building Community",
+		subtitle: "How to rally support for your idea near and far.",
+		description: "Collaboration is the human face of systems thinking."
+	},
+	{
+	  priority: 4,
+		title: "Unlocking Resources",
+		subtitle: "How to bring your ideas to life on a shoestring budget.",
+		description: "A good prototype is worth a thousand pictures."
+	},
+	{
+	  priority: 5,
+		title: "Fostering Personal Resilience",
+		subtitle: "How to ensure you not only endure, but also enjoy the journey.",
+		description: "A good half of the art of living is resilience."
+	}
+])

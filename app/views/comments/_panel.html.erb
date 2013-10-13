@@ -1,0 +1,5 @@
+<% if commentable.open_for_comment? %>
+
+	<%= render :partial => "comments/form", :locals => { :comment => Comment.new, :commentable => commentable } %>
+	
+<% end %>

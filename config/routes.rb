@@ -18,6 +18,12 @@ Leagueofintrapreneurs::Application.routes.draw do
 	resources :events, :only => [:index]
 	resources :resources, :only => [:index]
 	resources :intrapreneurs, :only => [:index,:show], :path => "people", :as => "people"
+	resources :toolkits, :only => [:index, :show] do 
+	  member do 
+	    get "share"
+	    get "comment"
+	  end
+	end
 	
 	match "join" => "colophon#join"
   match "about" => "colophon#about"

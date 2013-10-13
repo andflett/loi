@@ -1,0 +1,152 @@
+.section_toolkits #primary_content.container {
+  background: url(<%= asset_path "layout/paper_texture.jpg" %>) no-repeat left top #aed7d4;
+}
+
+/* =introduction */
+
+  .toolkits-introduction {
+    display: block;
+    margin: 0 auto;
+    text-indent: -1337px;
+    width: 890px;
+    height: 355px;
+    background: url(<%= asset_path "text/toolkit-introduction.png" %>);
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+
+  .toolkits-introduction h1 {
+    background: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
+
+/* =icons */
+
+  .toolkit-option {
+    text-indent: -1337px;
+  }
+
+  .toolkit-option a {
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: no-repeat top left;
+  }
+
+  .toolkit-option.option-blank-white a { 
+    height: 45px;
+    width: 45px;
+    background-image: url(<%= asset_path "icons/white-blank.png" %>);  
+  }
+
+  .toolkit-option.option-share-white a { background-image: url(<%= asset_path "icons/white-share.png" %>); }
+  .toolkit-option.option-download-white a { background-image: url(<%= asset_path "icons/white-download.png" %>); }
+  .toolkit-option.option-view-white a { background-image: url(<%= asset_path "icons/white-view.png" %>); }
+  .toolkit-option.option-download a { background-image: url(<%= asset_path "icons/splash-download.png" %>); }
+  .toolkit-option.option-share a { background-image: url(<%= asset_path "icons/splash-share.png" %>); }
+  .toolkit-option.option-comment a { background-image: url(<%= asset_path "icons/splash-comments.png" %>); }
+
+/* =blocks */
+
+  .toolkit-block {
+    background: no-repeat top left;
+    height: 308px;
+    margin: -24px auto;
+    width: 790px;
+    position: relative;
+  }
+  
+  .toolkit-block:last-child {
+    margin-bottom: 50px;
+  }
+  
+  .toolkit-block:hover,
+  .toolkit-block.active {
+    z-index: 100 !important;
+    cursor: pointer;
+  }
+  
+  .toolkit-block .toolkit-block-options {
+    margin: 0;
+    padding: 40px 0 0 13px;
+    display: block;
+  }
+  
+  .toolkit-block .toolkit-block-options li { padding-bottom: 12px; }
+  
+  .toolkit-block .toolkit-block-content {
+    text-indent: -11337px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .toolkit-block.toolkit-1 { z-index: 5; background-image: url(<%= asset_path "text/toolkit-1.png" %>); }
+  .toolkit-block.toolkit-2 { z-index: 4; background-image: url(<%= asset_path "text/toolkit-2.png" %>); }
+  .toolkit-block.toolkit-3 { z-index: 3; background-image: url(<%= asset_path "text/toolkit-3.png" %>); }
+  .toolkit-block.toolkit-4 { z-index: 2; background-image: url(<%= asset_path "text/toolkit-4.png" %>); }
+  .toolkit-block.toolkit-5 { z-index: 1; background-image: url(<%= asset_path "text/toolkit-5.png" %>); }
+
+/* =toolkit */
+
+  .toolkit {
+    width: 842px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .toolkit .toolkit-options {
+    width: 60px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -20px;
+    right: -40px;
+  }
+  
+  .toolkit .toolkit-slides {
+    padding: 0;
+    margin: 0 0 20px;
+    list-style-type: none;
+    height: 595px;
+  }
+  
+  .toolkit .toolkit-slides li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .toolkit #pagination {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .toolkit .prev,
+  .toolkit .next {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    text-indent: -1337px;
+    background: no-repeat top left;
+    z-index: 10;
+  }
+  
+  .toolkit .prev { margin-right: 20px; background-image: url(<%= asset_path "icons/splash-arrow-left.png" %>);}
+  .toolkit .next { background-image: url(<%= asset_path "icons/splash-arrow.png" %>);}
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401220741) do
+ActiveRecord::Schema.define(:version => 20131013082353) do
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -102,6 +111,18 @@ ActiveRecord::Schema.define(:version => 20130401220741) do
   create_table "tags", :force => true do |t|
     t.string "name"
     t.string "slug"
+  end
+
+  create_table "toolkits", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "subtitle"
+    t.string   "slug"
+    t.string   "hero_image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "download"
+    t.integer  "priority"
   end
 
   create_table "types", :force => true do |t|

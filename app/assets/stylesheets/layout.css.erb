@@ -210,7 +210,7 @@
 		
 		header #primary_navigation {
 			float: left;
-			width: 650px;
+			width: 750px;
 			overflow: hidden;
 			padding: 21px 0 0;
 		}
@@ -235,7 +235,7 @@
 			border-right: 1px dotted #908f8d;
 		}
 		
-		header #primary_navigation ul li:last-child {
+		header #primary_navigation ul li:nth-child(5) {
 		  border: none;
 		}
 		
@@ -252,6 +252,21 @@
 		header #primary_navigation ul li a.active {
 			color: #E40F4F;
 			text-decoration: none;
+		}
+		
+		header #primary_navigation ul li.toolkit-tab {
+		  position: absolute;
+  		right: -10px;
+  		bottom: 0;
+  		border: 0;
+  		padding: 0;
+		}
+		
+		header #primary_navigation ul li.toolkit-tab a {
+		  text-indent: -1337px;
+		  width: 270px;
+  		height: 114px;
+		  background: url(<%= asset_path "text/toolkit-tab.gif" %>) no-repeat top left;
 		}
 		
 	/* =primary_content */

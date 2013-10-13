@@ -7,7 +7,7 @@ class PodcastUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(mp3 ogg wav mp4)
+    %w(mp3 ogg wav mp4 pdf)
   end
 
 end

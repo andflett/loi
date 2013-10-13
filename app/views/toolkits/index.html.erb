@@ -1,0 +1,17 @@
+<section id="primary_content" class="container inspiration">
+	
+	<div class="toolkits-introduction">
+    <h1>Cubicle Warriors <span>Toolkit</span></h1>
+    <p>Drawing upon insights from seasoned intrapreneurs and subject experts, we’ve created a series of mission briefs to inspire your changemaking journey.</p>
+  </div>
+
+  <% if @toolkits.any? %>
+		<% @toolkits.each do |toolkit| %>
+			<%= render :partial => "toolkits/block", :locals => {:toolkit=>toolkit} %>
+		<% end %>
+	<% else %>
+	  <p>Nothing here yet!</p>
+	<% end %>
+
+</section>
+
