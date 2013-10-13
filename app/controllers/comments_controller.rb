@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 		@comment.user = current_user
     
     if @comment.save
-			AdminMailer.new_comment(@comment).deliver
+			AdminMailer.comment_on_toolkit(@commentable,@comment).deliver
       if request.xhr?
         render :create, :format => "js"
       else

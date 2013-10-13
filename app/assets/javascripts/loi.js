@@ -17,10 +17,10 @@ $(document).ready(function(){
 	});
 
 	// Smooth scroll inline links
-	$('a[href*=#]').click(function() {
+	/*$('a[href*=#]').click(function() {
 	  scrollToElement(this.hash)
 	  return false;   
-	});
+	});*/
 	
 	// Externals
 	$('a:external').click(function(e){
@@ -82,6 +82,9 @@ $(document).ready(function(){
 	  })
 	  
 	})
+	
+	// Modals
+	$("a[rel*=leanModal]").leanModal({closeButton: ".modal_close", overlay: 0.01});
 		
 });
 

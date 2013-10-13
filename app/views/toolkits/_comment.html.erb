@@ -1,0 +1,9 @@
+<div id="comment-<%= toolkit.priority %>" class="modal toolkit-comment">
+  <p class="call">Please share any builds or additional resources that will help our changemaking community</p>
+  <%= 
+      render :partial => "comments/panel", :locals => { 
+          :comments => toolkit.comments, 
+          :commentable => toolkit
+      } 
+  %>
+</div>

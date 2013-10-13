@@ -71,7 +71,12 @@
   
   .toolkit-block .toolkit-block-options {
     margin: 0;
-    padding: 40px 0 0 13px;
+    padding: 55px 0 0 13px;
+    display: none;
+  }
+  
+  .toolkit-block:hover .toolkit-block-options,
+  .toolkit-block.active .toolkit-block-options  {
     display: block;
   }
   
@@ -91,6 +96,30 @@
   .toolkit-block.toolkit-4 { z-index: 2; background-image: url(<%= asset_path "text/toolkit-4.png" %>); }
   .toolkit-block.toolkit-5 { z-index: 1; background-image: url(<%= asset_path "text/toolkit-5.png" %>); }
 
+/* =toolkit-header */
+
+  .toolkit-header {
+    background: url(<%= asset_path "text/toolkit-header.png" %>) no-repeat top left;
+    width: 843px;
+    height: 149px;
+    margin: 25px auto 35px;
+    position: relative;
+  }
+  
+  .toolkit-header h1 {
+    visibility: hidden;
+  }
+  
+  .toolkit-header p {
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    top: 17%;
+    right: 0px;
+    display: inline-block;
+    opacity: 0.75;
+  }
+
 /* =toolkit */
 
   .toolkit {
@@ -104,8 +133,8 @@
     padding: 0;
     margin: 0;
     position: absolute;
-    top: -20px;
-    right: -40px;
+    top: -25px;
+    right: -35px;
   }
   
   .toolkit .toolkit-slides {
@@ -140,8 +169,57 @@
   .toolkit .prev { margin-right: 20px; background-image: url(<%= asset_path "icons/splash-arrow-left.png" %>);}
   .toolkit .next { background-image: url(<%= asset_path "icons/splash-arrow.png" %>);}
   
+/* =toolkit-modal */
 
+  .modal {
+    width: 400px;
+    padding: 30px;
+    background: #009c95;
+    margin: 0 auto;
+    color: #ffffff;
+    display: none;
+    box-shadow: 7px 7px 10px rgba(1,1,1,0.3);
+  }
   
+  .modal p.call {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+/* =share */
+
+  .toolkit-share ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    text-indent: -1337px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .toolkit-share ul li {
+    padding: 0;
+    text-align: center;
+  }
+
+  .toolkit-share ul li a {
+    display: block;
+    height: 70px;
+    width: 70px;
+    float: left;
+    margin: 0 0 0 20px;
+    background: no-repeat top left;
+  }
+  
+  .toolkit-share ul li:first-child a {
+    margin-left: 100px;
+  }
+  
+  .toolkit-share ul li.splash-twitter a { background-image: url(<%= asset_path "icons/splash-twitter.png" %>); }
+  .toolkit-share ul li.splash-facebook a { background-image: url(<%= asset_path "icons/splash-facebook.png" %>); }
+
   
   
   

@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require paginate
 //= require spin.min
+//= require jquery.leanModal.min
 //= require_tree .
 //= require modernizr
