@@ -112,7 +112,17 @@
   }
   
   .toolkit-header h1 {
-    visibility: hidden;
+    text-indent: -1337px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+  
+  .toolkit-header h1 a {
+    display: block;
+    height: 90px;
+    width: 300px;
   }
   
   .toolkit-header p {
@@ -180,18 +190,29 @@
 /* =toolkit-modal */
 
   .modal {
-    width: 400px;
+    width: 350px;
     padding: 30px;
     background: #009c95;
     margin: 0 auto;
     color: #ffffff;
     display: none;
     box-shadow: 7px 7px 10px rgba(1,1,1,0.3);
+    position: relative;
   }
   
   .modal p.call {
     font-size: 22px;
     margin-bottom: 25px;
+  }
+  
+  .modal .modal_close {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background: no-repeat top left url(<%= asset_path "icons/splash-close.png" %>);
+    top: -25px;
+    right: -25px;
+    cursor: pointer;
   }
   
 /* =share */
@@ -239,7 +260,7 @@
   .toolkit-comment form textarea {
     height: auto;
     margin: 0;
-    width: 350px;
+    width: 300px;
     border-radius: 10px;
   }
   
@@ -247,6 +268,22 @@
   .toolkit-comment fieldset {
     padding: 0;
     margin: 0;
+  }
+  
+  .toolkit-comment fieldset:last-child {
+    padding: 10px 0 0;
+  }
+  
+  .toolkit-comment .actions input {
+    background: #ed215b;
+    color: #ffffff;
+    text-transform: none;
+    font-size: 17px;
+    font-family: georgia;
+    float: right;
+    border: none;
+    box-shadow: 0 0 0;
+    margin-right: 5px;
   }
   
   
