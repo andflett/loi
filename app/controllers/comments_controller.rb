@@ -2,13 +2,13 @@ class CommentsController < ApplicationController
   
   before_filter :fetch_commentable
   before_filter :fetch_comment, :only => [:edit, :update, :destroy]
-  before_filter :authenticate_user!
-  before_filter :authenticate_as_owner!, :only => [:destroy, :edit, :update]
+  #before_filter :authenticate_user!
+  #before_filter :authenticate_as_owner!, :only => [:destroy, :edit, :update]
   
   def create
     
 	  @comment = @commentable.comments.build(params[:comment])
-		@comment.user = current_user
+		@comment.user = User.first
     
     if @comment.save
 			AdminMailer.comment_on_toolkit(@commentable,@comment).deliver
