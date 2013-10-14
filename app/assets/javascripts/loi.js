@@ -65,20 +65,20 @@ $(document).ready(function(){
 	});
 	
 	// Toolkit link blocks 
-	$('.toolkit-block').each(function(i,el){
+	$('.toolkit-block-content').each(function(i,el){
 	  
 	  $(el).bind('mouseenter',function(e){
-	    $(this).addClass('active');
+	    $(this).parents('.toolkit-block').addClass('active');
 	  });
 	  
 	  $(el).bind('mouseleave',function(e){
-	    $(this).removeClass('active');
+	    $(this).parents('.toolkit-block').removeClass('active');
 	  })
 	  
 	  $(el).bind('click',function(ev){
 	    ev.preventDefault();
 	    ev.stopPropagation();
-	    window.location = $(this).find('.option-view-white a').attr('href');
+	    window.location = $(this).parents('.toolkit-block').find('.option-view-white a').attr('href');
 	  })
 	  
 	})
