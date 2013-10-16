@@ -1,8 +1,8 @@
 <div id="share-<%= toolkit.priority %>" class="modal toolkit-share">
   <p class="call">Share '<%= toolkit.title %>'</p>
   <ul>
-		<li class="splash-twitter"><%= link_to "Twitter", "https://twitter.com/SocIntLeague" %></li>
-		<li class="splash-facebook"><%= link_to "Facebook", "http://www.facebook.com/leagueofintrapreneurs" %></li>
+		<li class="splash-twitter"><%= link_to "Twitter", "https://twitter.com/intent/tweet?text=#{toolkit.title} - #{toolkit_url(toolkit)} via @SocIntLeague&source=SocIntLeague" %></li>
+		<li class="splash-facebook"><%= link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{toolkit_url(toolkit)}" %></li>
 	</ul>
 	<span class="modal_close"></span>
 </div>
