@@ -7,7 +7,7 @@ Set your API key and list name in `config/mailchimp.yml`
 ### Uploader storage
 
 By default the application uses carrierwave and S3 for storage. You'll need to pop your AWS credential in `config/carrierwave.yml`
-
+ 
 
 ### Making something Commentable
 
